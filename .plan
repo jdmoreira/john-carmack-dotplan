@@ -1,23 +1,23 @@
-* tracked loadgame problem to stack overflow
-* removed console cursor if key_dest != key_console
-* ignore all autorepeat keys except backspace
-* removed the extra unit of padding around bmodels that caused them to
-clip
-* build entity list for refresh instead of pushing efrags
-* fixed cells not carrying from level to level
-* nightmare skill item spawning is fixed
-* old deathmatch rules by setting deathmatch 2
-* options menu sliders
-* moved gamma correction out of vid systems into view
+* fish don't leave water
+* merged new CD code
+* shambler lightning pitch correct
+* cut number of cells in half
+* beam weapon entities only on client side
+* fixed sliding death/no retart bug
+* muzzle flash for wizards
 
-+ shambler lightning needs pitch
-- stop demo when menu comes up?
-+ nightmare skill
-+ integrate spritegen with
-+ lookspring checkbox
-+ make sure all menu options get saved
-+ clear notify lines when in menu
++ regrab gold/silver keys on sbar
++ accumulate damage over a frame
++ dissalow more than two bindings to the same action
 
-increase surface cache size?
-do knight swords do meat chunks?
-centerspeed slider
+flymonster in wall test
+jump cause center?
+non-linear mouse movement reponse?
+use 3 frames of gib3
+start using pcx for all utilities
+use slight for shambler setup
+replace all item_weapon
+lava damage on monsters
+transition to intermission
+warning sound on about to drown
+don't end demo when player is in menu
