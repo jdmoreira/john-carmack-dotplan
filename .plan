@@ -1,17 +1,11 @@
-* fixed spinning barrel on respawn issue
-* clear eflags before intermission
-* shutdown menu on starting a cinematic
-* mask name colors to 0-7 range
-* fixed jpeg loading alpha channel
-* try for not-nearest spawn twice instead of once
-* made unzoomed exactly identity mouse modifier
-* cl_debugmove [1/2]
-* m_filter
-* fixed time warnings
-* allow timelimits to hit with only a single player
-* filter local games with different protocol versions
-* fixed bad arg 0 after sysinfo configstring
-* removed unneeded svc_servercommand at start of command strings
-* fixed redundantly loaded level bug
-* fixed journal playback from demo build
-* removed background image from viewlog window
+* teamplay menu comment
+* shrank and moved "RECORDING demo:" text
+* identified and worked around Apple input queue issue
+* properly send configstring resets on map_restart
+* don't clip sound buffer on file writes
+* don't draw scoreboard during warmup
+* auto load added bots in single player
+* swapped order of map_restart and warmup configstring
+* disable dynamic lights on riva128 due to lack of blend mode
+* put frags left warning back in all gametypes
+* removed joystick button debug prints
