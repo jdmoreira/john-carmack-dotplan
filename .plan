@@ -1,45 +1,30 @@
-* teleport triggers UseTqargets
-* fixed once triggers
-* cleared static sounds between levels
-* right justify options menu text
-* cells became rockets on level cross
-* changed teleport humm attenuation
-* lookspring checkbox
-* lookstrafe checkbox
-* mouse y invert checkbox
-* allways run checkbox
-* made fov not a saved cvar
-* wizspike and knightspike t ents
-* take away stuff after completing an episode
-* end of episode text
-* head gib eye in floor bug
-* blink cursor after messageboxes
+* boss damage only by lightning
+* enforcer bolt positioning
+* all gibs centered
+* lava splash
+* boss stop throwing when player is dead
+* fixed cl_backspeed for always run checkbox
+* fixed double talk sound on triggers
+* retain options menu cursor pos
+* nightmare mode: no attack_finished limits, and five second pain interval
+* triggered door message bug
+* weeded out the unused entities in misc
+* consolidated the four remaining sprite scripts into a single file
+* modified sprgen to allow multiple grabs in a single file
+* grabbed new explosions
 
-+ everyone goes through the return teleporter in episode 4 jrstart
-+ is bgm volume not working for cd?
-+ make zoom a default configuration?
++ level 1 gib needs work
++ is clipping detection for asm sound mixing working right?
++ items falling through other items bug
++ item on moving object respawn bug
++ models aren't checking dlight decay time
++ fix drop.map
++ status active/max is reversed
 
-quad damage shotgun doesn't gib zombies
-bonus item flashes
-no menu sounds when disconnected
-teleport ambient sound is no good
-auto center when treading water
-monster drowning
-blaster mismatch warning is misformatted
-axe kill zombies
-new game loading plaque not showing
-change zombie knock down code
-reformat console on vid change
-grenade launcher kicks too much
-surface cache size in weird aspect ratio modes
-prevent vid from allocing a big enough buffer to cause the next load to
-fail
-deathmatch invis eyes
-monster reduced accuracy during invis
-push for red super spikes
-monster death bubbles underwater?
-change name back to quad damage
-disconnect from netgame isn't being sent
-remove coop cheating
-centerprint time reletive to length?
-centerprint "entering ..." on level entry
+coop against boss
+make qlumpy parse qc files as source?
+combine particals and temp entities
+fix gib rules
+slime burn down
+check edict return type
+flash weapon icons
