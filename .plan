@@ -1,33 +1,36 @@
-* any key in demos brings up menu
-* demo transitions bring up loading plaque
-* added timeout for loading plaque
-* forced console away with loading plaque
-* regular restart uses loading plaque
-* disabled triggers now work properly after a savegame
-* cleared edict before parsing to fix door beeping bug
-* testing if(string) in qcc is not reliable, change to if (string != "")
-* fixed loadgame cursor problem after saving a typed in name
-* fixed dos savegame crash bug
-* automatic pak0.pak pak1.pak etc loading from game directories
+* automatic setting of the registered cvar
+* demos play from pak file
+* delay SCR_EndLoadingPlaque until after cache report
+* added -minmemory parm for testing entry case
+* stopped demo loop on demo load error
+* stopped demo loop on connect and map
+* zbuffer torch dropout bug fixed
+* changed all remaining I_ functions to Sys_
+* chase network issues
+* colored light gel demo
 
-back to start after finishing each episode
-episode finished items
-ogre jumping frames
-load bmodels by lumps for less memory damage?
-does quake.qpr have to be in the root of the development directory?
-crosshair option
-wait on jump triggers?
-drowning warning
-cmd line load
-reformat text on vid mode change
-deathmatch level crossing
-nightmare mode
-death restart needs loading plaque
-map name on savegame comment line
-regular restart after a load game doesn't work
-bound load pointer
-swing up weapons
-lightning gun
-safe edict allocation failure
-remove view model in wide FOV modes
-give 9 faults
+remove bspleaktest from quake.qpr
+can trigger_changelevel stuff two commands sometimes?
+remove powerup shifts before intermission
+gib code for the big monsters
+give wizards (hknights?) need a muzzle flash
+last_damage on zombie for cumulative gibs
+new explosion
+check min memory with large number of clients
+better treading water
+escape at a fulls creen console to restart demos?
+allways run checkbox in options
+instructions on configuration screen
+fish attack
+fish not leave water
+finish invisibility
+conditional registration message in jrstart
+monsters die in slime
+longer message triggers in jrstart
+take dogs by ramp out in jrbase1
+easier jump out of water
+remove jsilly rbase1 bonus items
+smotte light at start
+loadgame from pulldown menu
+amlev98 shambler needs red armor on easy level
+for release: don't forget to remove "developer 1" cvar and bound cheats
