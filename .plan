@@ -1,36 +1,32 @@
-* automatic setting of the registered cvar
-* demos play from pak file
-* delay SCR_EndLoadingPlaque until after cache report
-* added -minmemory parm for testing entry case
-* stopped demo loop on demo load error
-* stopped demo loop on connect and map
-* zbuffer torch dropout bug fixed
-* changed all remaining I_ functions to Sys_
-* chase network issues
-* colored light gel demo
+* based load plaque removal on framecount instead of updates
+* fixed crash bug with zerod notify lines
+* load / save game menus converted to slots instead of file names
+* end1 / end2 shareware / registered end screens
+* triggered monsters no longer awake on invisible or notarget players
+* broke out default.cfg from quake.rc
+* fixed five way counter trigger message
+* fixed push triggers to be frame rate independent
+* translated spaces to _ in savegame comment to make stdio happy
+* escape in keygrab now justs turns it off
+* protected against recursive loop when Con_Printf inside
+SCR_UpdateScreen
 
-remove bspleaktest from quake.qpr
-can trigger_changelevel stuff two commands sometimes?
-remove powerup shifts before intermission
-gib code for the big monsters
-give wizards (hknights?) need a muzzle flash
-last_damage on zombie for cumulative gibs
-new explosion
-check min memory with large number of clients
-better treading water
-escape at a fulls creen console to restart demos?
-allways run checkbox in options
-instructions on configuration screen
-fish attack
-fish not leave water
-finish invisibility
-conditional registration message in jrstart
-monsters die in slime
-longer message triggers in jrstart
-take dogs by ramp out in jrbase1
-easier jump out of water
-remove jsilly rbase1 bonus items
-smotte light at start
-loadgame from pulldown menu
-amlev98 shambler needs red armor on easy level
-for release: don't forget to remove "developer 1" cvar and bound cheats
+is model name caching being done correctly for the flushed world model
+name?
+centerprint message delay times
+fade screen behind menus
+gib big monsters
+cl itemgettimes aren't saved.  do they need to be?
+weapon nudges on different view sizes
+slime ambient sounds
+center everything in higher res modes
+got stuck by explosion near zombies
+return to jrstart stuff
+amtest98 needs new teleport textures
+reset defaults option
+reset to defaults option
+track down load failed comments
+why do menu sounds ometimes not work?
+combo look/strafe
+fix lightning
+push trigger directionality wierdness
