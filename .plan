@@ -1,26 +1,47 @@
-* changed network update to client PVS specific
-* fixed broadcast svc_setangle on player connect
-* fixed "Message was extranious" connection bug
-* partical fields
-* invisibility model switching
-* effects passing from server
-* invincibility
+* muzzle flashes
+* eat keys between levels
+* added new pain frames for soldiers
+* fix savegames with PVS update
+* new status bar updates
+* fixed packet overflow and noclip with PVS update
+* synced zombie throws from exact position
+* put in new ogre grenade
+* no span lighting in subdivided triangle code
+* better gibbing code
+* vid_size for nextstep
+* determined the hang is in the sound mixing loop never exiting
 
-+ self.modified is no longer needed with PVS updates
-+ empty space back fill Z buffer bug
++ auto pause with console
++ more time for ogres before launching grenades
++ is restart doing a progrestart?
++ fix gib head bbox
++ head outside level
++ backpacks don't drop when floor is pulled out
++ movetype_missiles need to be intangible against owners
++ gib dogs
++ teleport flashes aren't in the pvs
++ soldier3 new pain frames
++ fix high framerate bug
 
-vertical aiming sometimes shoots at a farther object
-over long latency lines, should shots come from the position the player
-was
-        viewing, or the true position?
-combine client->active and client->spawned into a client->state
-backpack message should include weapon gainsed
-throw monsters around from explosions
-drop wizard by half gravity
-make tri subdividing rasterizer based on screen size! (huge models go
-slow)
-american got a prog to crash
-allow listen servers to have a sys_ticrate?
-cut back on use of global host_client
-new teleport surface warp
-body que is broken
+minimum ambient light field for bmodels
+make it easier to jump out of water
+default water treading
+better discrimination of slime and water
+need to cycle allocations of temporary entities to prevent false reuse
+repeating bounce sound on dropping plats
+crush monsters extremely by plats
+about to drown warning noise
+load last savegame by default
+monsters burn in lava
+float particals from tport pads
+don't switch to frag bar on single player death
+slope lookup
+got stuck in a downed zombie
+make an error message in qcc for function calls inside a parm list
+polygon torches
+need to make impulses reliable, or looping sounds may not be killed
+restart game with entrance spawn parms
+allways test demos and savegames after a net change!
+option to match ping times for fair deathmatches?
+get bonus items on top of doors spawning deterministically
+selective cheat for testing
