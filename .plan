@@ -1,26 +1,51 @@
-* background noise track code
-* fixed swimming nan bug
-* fixed Sandy's quakeed crahser
-* QuakeEd: turn region off when going to new map
-* automatic sound decimation based on available memory
-* explosion sprite cores
-* QuakeEd: don't go to worldspawn
-* qcc is now fully recursive
-* buttons only pressable by player
+* changed grenade cores to MOVETYPE_NONE
+* set gravity in worldspawn
+* fixed host_framerate
+* stopped sounds before server shutdown
+* clear all controls on first client frame
+* view.map, viewmodel, viewframe, viewprev, viewnaext commands
+* dropped ogre backpack to 2 grenades
+* fail soft on video mode memory allocation
+* checked console resize in vid mode set, so size messages never get lost
+* shootable buttons
 
-+ the explosion cores are still MOVETYPE_TOSS, not MOVETYPE_NONE
-+ set gravity on secret level
-+ host_framerate cvar is broken
-+ shootable buttons
-+ wizards on paths go to wrong heights
-+ make knights not move when in melee range
-+ light styles in savegames
-+ QuakeEd: filter world
-+ QuakeEd: remove check for filtered brush
++ edge light seams
++ increase max packet size during development?
++ rotate dogs slower?
++ monsters drop to floor after teleport
++ need very obvious sound for sequence completion
++ model viewer inside quake
++ cache alias models, if only to help level to level change speeds
++ cache heap compaction
++ remove bsp->leaktest from QuakeEd
++ dog leaping
++ sight sound on monster use
++ allways switch to picked up weapons
++ blink weapon icons on status bar when picked up
++ climb out of water bug
++ water warp option in all vid modes
++ make qcc 64 bit clean by using doubles instead of floats on 64 bit
+archs?
 
-fish fly out of water
-make door triggers not box sized
-check respawning on tim5 armor that drops down
-make an end of frame call for each player
-allow sprites to have a faked forward Z value?  allways?
-key alias models
+intermission levels
+spritegen has funny pathname determination
+demo fast forward
+seperate impact from damage
+combine some of the state flags in both client_t and server_t
+ambient light option on bmodels
+palette should be reset whenever console goes full creen
+should all +- binding have the keyname prepended to avoid the multiple
+downs?
+seperate mouse scaling for turning and moving
+make a "soundshot" option fortesting soundcode in ansi spec makefile?
+raise / lower weapons
+change weapon after firing last round
+flying fish
+change entity flags to effects
+should host_error try to cleanup aborted servers and clients?
+how many hunk allocs are there?  save memory by combining?
+QuakeEd: filter based on skill levels
+check trigger firing when spawned inside one
+remove input line completely when not accepting input
+data checksums for remote servers
+shrink net packet sizes
