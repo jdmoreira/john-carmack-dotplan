@@ -1,15 +1,19 @@
-My last two .plan updates have described efforts that were not in our original plan for quake 3, which was "quake 2 game and network technology with a new graphics engine".
+Here is the real story on the movement physics changes.
 
-We changed our minds.
+Zoid changed the movement code in a way that he felt improved gameplay in the 3.15 release.
 
-The new product is going to be called "Quake Arena", and will consist exclusively of deathmatch style gaming (including CTF and other derivatives). The single player game will just be a progression through a ranking ladder against bot AIs. We think that can still be made an enjoyable game, but it is definately a gamble.
+We don't directly supervise most of the work Zoid does. One of the main reasons we work with him is that I respect his judgment, and I feel that his work benefits the community quite a bit with almost no effort on my part. If I had to code review every change he made, it wouldn't be worth the effort.
 
-In the past, we have always been designing two games at once, the single player game and the multi player game, and they often had conflicting goals. For instance, the client-server communications channel discouraged massive quantities of moving entities that would have been interesting in single player, while the maps and weapons designed for single player were not ideal for multiplayer. The largest conflict was just raw development time. Time spent on monsters is time not spent on player movement. Time spent on unit goals is time not spent on game rules.
+Zoid has "ownership" of the Quake, Glquake, and QuakeWorld codebases. We don't intend to do any more modifications at Id on those sources, so he has pretty free reign within his discretion.
 
-There are many wonderful gaming experiences in single player FPS, but we are choosing to leave them behind to give us a purity of focus that will let us make significant advances in the multiplayer experience.
+We passed over the Quake 2 codebase to him for the addition of new features like auto download, but it might have been a bit premature, because official mission packs were still in development, and unlike glquake and quakeworld, Q2 is a product that must remain official and supported, so the scope of his freedoms should have been spelled out a little more clearly.
 
-The emphasis will be on making every aspect as robust and high quality as possible, rather than trying to add every conceivable option anyone could want. We will not be trying to take the place of every mod ever produced, but we hope to satisfy a large part of the network gaming audience with the out of box experience.
+The air movement code wasn't a good thing to change in Quake 2, because the codebase still had to support all the commercial single player levels, and subtle physics changes can have lots of unintended effects.
 
-There is a definite effect on graphics technology decisions. Much of the positive feedback in a single player FPS is the presentation of rich visual scenes, which are often at the expense of framerate. A multiplayer level still needs to make a good first impression, but after you have seen it a hundred times, the speed of the game is more important. This means that there are many aggressive graphics technologies that I will not pursue because they are not apropriate to the type of game we are creating.
+QuakeWorld didn't support single player maps, so it was a fine place to experiment with physics changes.
 
-The graphics engine will still be OpenGL only, with significant new features not seen anywhere before, but it will also have fallback modes to render at roughly Quake-2 quality and speed.
+QuakeArena is starting with fresh new data, so it is also a good place to experiment with physics changes.
+
+Quake 2 cannot be allowed to evolve in a way that detracts from the commercial single player levels.
+
+The old style movement should not be referred to as "real world physics". None of the quake physics are remotely close to real world physics, so I don't think one way is significantly more "real" than the other. In Q2, you accelerate from 0 to 27 mph in 1/30 of a second, which just as unrealistic as being able to accelerate in midair..
