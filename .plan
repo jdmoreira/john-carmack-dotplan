@@ -1,47 +1,37 @@
-AMD K7 cpus are very fast.
+I was in San Jose for the past week. The original idea was to go into "hermit mode" holed up in a hotel room and get a lot of work done without any phone calls, email, or coworkers to distract me, but I wound up with meetings scheduled every day with various valley companies. Next time I want to try that, I'll pick some state like Montana... :-)
 
-Some timedemo numbers (a new demo, not comparable to previous scores):
+The top priority was getting the virtual machine done, but I hoped to also get some more of the map data optimizations completed. I definately underestimated how big of a hole daily meetings would punch in the amount of work I could accomplish.
 
-Run at 640*480*16 bit color to emphasise the cpu/driver performance rather than the hardware fill rate.
+On wednesday I was sweating a bit, not sure if I would have the VM finished in time, but it all came together in the last two days.
 
-[code]
-                    K7-600  K7-550  PIII-500
-TNT2 ultra 16 bit     73.9    68.5      53.8
-Voodoo3 3000 16 bit    70.5   65.2      46.0
-[/code]
+The virtual machine interpreter is now completely functional, and cgame can switch between being loaded as a binary .dll or an interpreted .qvm at the change of a cvar.
 
-This is with K7 optimized drivers vs seperate PIII optimized drivers.
+The basic setup is that I have a modified version of the lcc compiler that generates assembly files that are processed by a new tool "q3asm" into a .qvm file that can be interpreted by q3. You can still use normal dll's for debugging, then release interpreted code. You can release a binary dll if you need some native system services (some networking stuff, for example) or are doing very compute intensive work, but I strongly encourage everyone to try to use the virtual machine.
 
-There is still wiggle room there in that it is possible that more effort was expended to make the AMD drivers perform better. That is perfectly valid from a consumer's point of view, but muddies the technical CPU comparison.
+The interpreted code has two prime benefits: portability and security.
 
-On identical code run on the systems, there was some more interesting data:
+User mods done with qvms will automatically work on mac, linux, and any other oddball ports that get released.
 
-On my map processing tools, the K7 was faster than the PIII, but only slightly more so than the reletive clock rate increase. I would guess that this is due to larger data sets that don't fit in cache as well.
+A qvm program cannot modify anything outside its private address space, and the "system calls" to the game strictly limit what can be touched. I was scared about the binary dll's in Q2, but rationalized it to myself that people running public servers should be aware of the dangers. With Q3 allowing client side programming, it just needs to be safe for everyone.
 
-On the matrox OpenGL drivers, which have not been optimized very much and (to my knowledge) contain no PIII specific code, the K7 was a LOT faster.
+Packaging is also improved somewhat, because the virtual machine programs can be included in pak files and are automatically handled through the search path.
 
-The bottom line is that I feel comfortable standing behind the statement that the K7 is faster than the PIII. I will have to wait for some stuff to come out of NDA to provide a more detailed technical analysis.
+Unfortunately, even after doing most of the straightforward optimizations, the interpreter is causing a 20% slowdown in timedemos right now.
 
-Architectural cleverness is all well and good, but if AMD can't keep the clock speed up with intel, they will still fall behind. A 700 mhz PIII would probably find a lot of applications (especially integer apps) where it would outperform a 600 mhz K7.
+I am pretty committed to running cgame interpreted, but if I don't get a significant speedup, we may have to leave the server side game module as a native dll. The ui module can obviously be interpreted.
 
+There are lots of paths I can take to get the performance up:
 
+Write more efficient cgame code. I will definately be looking at this. A lot of things that just didn't matter at all when in native code now add up enough that they should be fixed. I want to avoid flexibility tradeoffs if possible.
 
-* stabilized cg_showfps
-* added append support to module file opening
-* automatic logging of game scores to games.log
-* fixed guantlet firing action
-* force a vid_restart on WM_DISPLAYCHANGE messages
-* fixed sticking on stairs on very fast framerates
-* fixed sticking on stair when jumping
-* fixed sticking in corner while falling physics bug
-* fixed slide down steep slope physics bug
-* r_showimages texture use debugging tool
-* cg_freezeDemo cvar
-* cg_drawSnapshot cvar
-* fixed warnings after demo playback
-* changed "stopdemo" to "stoprecord"
-* fixed phantom windows on task bar after exit
-* check for unset player animation
-* fixed the snap-down-look-up bug with very high sensitivities
-* reduce inflicted damage by handicap
-* all pmove results as events for proper demo playback
+Move more calculation from the cgame to system calls. I have already done this for the obvious things like memset, matrixmultiply, etc. Any future work will involve restructuring cgame code to focus lots of work into simple stateless functions. The trick is to leave all the flexibility in the cgame while moving the work.
+
+Implement LCC compiler optimizations. I doubt I will pursue this, unless there are existing optimization projects based on LCC with minimal backend changes required.
+
+Implement more complex interpreted instructions and peephole combine the bytecodes into the new instructions. I think this has some promise.
+
+Assembly code the interpreter loop. The compiler is generating good code, but there is still room for gain. I don't want to pursue this until the high level optimizations are wrung out.
+
+Load time compilation from bytecode to native code. This would bloat a lot, especially on RISC cpus. I'm not sure that a straightforward implementation would have significant speed benefits over an assembly interpreter loop, and I won't have time for writing an aggressive native optimizer.
+
+Deal with the performance cost and optimize the renderer some more to compensate.
