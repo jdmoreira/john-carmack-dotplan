@@ -1,11 +1,23 @@
-* fixed savegame / phantom box bug
-* fixed underwater
-* allow monsters to sight other just-damaged monsters as clients
-* fixed lookspring
+* flipped secret and kill plaques
+* finish solo scoreboard
+* finale
+* optimized CL_CalcAmbientSounds
+* optimized ResampleSfx
+* reduced index sizes in .bsp files
+* flood filled away outside sky fragments in bsp files
 
-+ secrets and kills are backwards
++ fix cache dir
 
-tighten dlight radius/attenuation
-copy center prints to console
-the portal bug
-cue music on completion
+demo loop issues
+modify qbsp to allow entities only option to generate new triggers
+randomize intermission spots
+conditional bars in jrstart?
+teleport sprite
+fish
+registration key
+light bmodels
+different quad damage effect
+slipgate animations
+lightning gun
+general "no move" flag for player server C code
+scaled texture lighting still has bugs
