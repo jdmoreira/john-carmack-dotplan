@@ -1,17 +1,23 @@
-I haven't even seen the "BeOS port of Quake". Stop emailing me about aproving it. I told one of the Lion developers he could port it to BeOS in his spare time, but I haven't seen any results from it.
+Drag strip day!
 
--
+Most of the id guys, John Romero from ION, and George and Alan from 3drealms headed to the Ennis dragstrip today.
 
-There is a public discussion / compilation going on at openquake for suggestions to improve technical aspects of quake 3:
+Nobody broke down, and some good times were posted.
 
-http://www.openquake.org/q3suggest/
+11.9 @ 122 John Carmack F40
+12.2 @ 122 George Broussard custom turbo 911
+12.4 @ 116 Brian Hook Viper GTS
+13.4 @ 106 John Romero custom turbo testarossa
+13.6 @ 106 Todd Hollenshead 'vette
+13.9 @ 100 Paul Steed 911
+14.0 @ 99 Tim Willits 911
+14.3 @ 101 Bear Turbo Supra
+14.4 @ 98 Alan Blum turbo rx-7
+14.7 @ 92 Brandon James M3
+15.3 @ 92 Christian Boxster
+15.5 @ 93 Jen (Hook's Chick) Turbo Volvo
+16.1 @ 89 Ms. Donna Mustang GT
+17.4 @ 82 Anna (Carmack's Chick) Honda Accord
+18.1 @ 75 Jennifer (Jim Molinets' Chick) Saturn
 
-This is sooo much better than just dropping me an email when a thought hits you. There are many, many thousands of you out there, and there needs to be some filtering process so we can get the information efficiently.
-
-We will read and evaluate everything that makes it through the discussion process. There are two possible reasons why features don't make it into our games - either we decide that the effort is better spent elsewhere, or we just don't think about it. Sometimes the great ideas are completely obvious when suggested, but were just missed. That is what I most hope to see.
-
-When the suggestions involve engineering tradeoffs and we have to consider the implementation effort of a feature vs its benefits, the best way to convince us to pursue it is to specify EXACTLY what benefits would be gained by undertaking the work, and specifying a clean interface to the feature from the file system data and the gamex86 code.
-
-We hack where necessary, but I am much more willing to spend my time on an elegant extension that has multiple uses, rather than adding api bulk for specific features. Point out things that are clunky and inelegant in the current implementation. Even if it doesn't make any user visible difference, restructuring api for cleanliness is still a worthwhile goal.
-
-We have our own ideas about game play features, so we may just disagree with you. Even if you-and-all-your-friends are SURE that your suggestions will make the game a ton better, we may not think it fits with our overall direction. We aren't going to be all things to all people, and we don't design by committee.
+We had three significant no-shows for various reasons: my TR, Adrian's viper, and Cash's supercharged M3 were all in the shop.
