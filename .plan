@@ -1,7 +1,7 @@
-+ teleport flash is broken
-+ order of monster fall to ground
++ sound loop points
 
-multiple input drivers (hard coded)
-save cfg
-bounce head gib?
-wall scaling is step up?
+multi life / level demos
+precache_sound return string value
+make jump buffered edge triggered
+clipping hull lips
+hang after sitting overnight on dos
