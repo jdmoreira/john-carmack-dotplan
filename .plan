@@ -1,11 +1,9 @@
-* finished box sweeping code
-* fix the automenu key problem on bad cinematic
-* blinking black screen palette set issues
-* send dowarp over from server
-* fixed color 0 grabbing
-* bonus flashes
-* Q_fabs
+* fixed qe4 texturepath bug
+* qe4: show in use textures even when showing a wad
+* utils: fixed gamedir to allow nested quake2 directories
+* moved env out of gfx, so gfx is all source files
 
-+ dedicated server
-
-drop stair climb in air height
+malloc tags for game and level
+clone detail brushes should remove detail flag
+make timedemo a server connect thing
+ktest.reg bad model
