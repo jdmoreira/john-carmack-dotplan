@@ -1,7 +1,5 @@
-I made significant improvements to the scalability of QuakeWorld.
+I took an entire day and a half off from work to spend some quality time with my F40 at Texas World Speedway. I had a lovely moment pitching my quarter million dollar car off the track backwards (no harm done), but otherwise I had a great time. Back to work now.
 
-You have probably noticed how a 16 player game is a lot worse over a modem than a 4 player game, even when you aren't around the action. All of those factors are now gone, so big games play a lot better now, and I have bumped the maximum players to 32. There aren't really any levels that will be reasonable with that many players, but if someone wants to create one, it should be possible now. (obviously you are still going to go slow if all 32 people decide to congregate in the same room)
+I should have updates of both QuakeWorld and GlQuake within a week. QW is crapping out at 27 players for some reason (rather difficult to debug...), and glquake needs a fix for the hipnotic level pack to work.
 
-The next release of QuakeWorld is going to be completely incompatable with the current release. Both the client and server have changed protocols, and the fate of the master server is still undecided.
-
-I have one more really significant thing to try with the network protocols that I should probably hold up the release for, because it would be yet another incompatable change.
+My next project is to define a new rendering architecture that will clean a bunch of stuff up and allow me to combine regular quake, glquake, and a windows version of vquake into a single executable. I plan on doing the development work with QW, so I won't be stepping on Michael or Cash's toes as I go hacking and slashing through the codebase. If everything goes well, that will become the new guts of Quake 2, and I will probably also release a unified Quake 1 executable.
