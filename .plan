@@ -1,13 +1,19 @@
-* r_primitives 3 path for non-vertex array testing
-* specify sex in model animation.cfg file
-* proper dropping of failed bot inits
-* removed identical pain sounds
-* serverTime strictly increasing across levels
-* added GL_DECAL multitexture collapse
-* windowed mouse on mac
-* fixed byte order issue with curve clipping on mac
-* made com_defaultextension buffer safe
-* fixed levelshot and added antialiasing to image
-* don't clear bot names before kick message
-* made servercommand sequences strictly increasing across level changes
-* unpause on vid_restart
+* handle window close events properly
+* enable r_displayRefresh selection and feedback on mac
+* avoid AGEN_IDENTITY when CGEN_DIFFUSE_LIGHTING
+* colorized railgun muzzle flash, impact flash, and mark
+* exactly synced animating textures with waveforms and collapsed all explosion sequences into single shaders
+* removed unneeded black pass on hell skies
+* fixed grenades sticking to steep slopes
+* scan for next highest fullscreen resolution when exact mode fails (fixes SGI flat panel failing to init)
+* all cgame cvars now have a cg_ prefix (crosshair, fov, etc)
+* clear clientinfo before parsing configstring
+* make all feedback voiceovers share the same channel
+* fixed nodraw curves
+* fixed obits from shooter entities
+* fixed chat char issue
+* separate gentity_t fields into sharedEntity_t
+* reintegrated q_mathsys with q_math
+* cg_forcemodel also forces player sounds
+* unknown cmd commands don't chat
+* fixed strip order on text quads
