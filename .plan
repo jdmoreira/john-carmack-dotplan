@@ -1,15 +1,19 @@
-* added precache_file qcc option for -copy files
-* capped health at 250
+* got new internet code running
+* server protocol number
+* stopped printing name change message for first message
+* put usleep back in
 
-+ solid, invisible brushes
-+ don't send linear entities in signon message
-+ write a message trace printing mode
-+ is 256 angle quantization from client hurting us?
-+ sky animations use the wrong time base
-+ centralize the connection process
++ an entity model is being cleared out from underneath it
++ rotating body parts
++ binary bit fields
++ damage in datagrams
++ push back at edges when moving slow?
++ twirling gibs
++ bit fields for binary objects
++ never reuse binary object slots
++ fix connect to a bad map
++ noticed water to dm only clipping prob in tim13
++ no sutch alias frame problem
 
-weapon switching is wrong
-no twitch in god mode
-if a linear update entity doesn't get an update in a packet, remove it
-bound upper client message sends properly
-RELEASE: bump protocol version numbers just before releasing
+magic8ball.rogue-ent.com = 38.252.190.8
+ability to make custom plat activation triggers
