@@ -1,11 +1,9 @@
-*	ogre sounds
-*	made 180 turns go left for better ogre dragging
-*	error checked and extended qbsp
+*	expand qbsp to 32 bit values for edges and faces. sigh.
+*	fixed key sticking problem
 
-+ drop green slime percentage
-+ ram chip overlapps turtle
-+ do DEC quote
-+ nolerp update
-
-caps-lock = full speed
-no particle effects on sky
+seperate mouse sscaling values to allow negative up/down reversal
+frag bar shows first two digits, not last two when >= 100
+randomize head direction
+slime less damage
+drop to knees when crunched
+check deathmatch flags before precaching
