@@ -1,41 +1,27 @@
-The way vertex lighting is working in the existing demos is that only two pass shaders (lightmap * texture) were collapsed to a single pass, all other shaders stayed the same.
+The demo servers have general purpose flood-protection that has caused some confusion.
 
-Xian added some chrome and energy effects to parts of q3tourney2, which changed them from two pass to three pass shaders. We felt that that 50% increase on those polygons was justified in normal play, but as people have pointed out, when you are playing with vertex lighting, that three passes stays three passes instead of collapsing to a single pass, resulting in a 300% increase on those polygons over the way it was before. Still faster than lightmap mode, but a large variance over other parts of the level.
+Clients are only allowed to make one command a second of any kind. This prevents excessive flooding by chats, model / name changes, and any other command that could possibly be exploited. The command streams are stalled, so it doesn't have any effect on processing order or reliability.
 
-Today I wrote new code to address that, and improve on top of it.
+This means that if you issue two commands immediately after one another, there will be a one second stall before the second command and all movement clears. You see this on the lagometer as yellow spiking up for a second, then dropping away.
 
-Now when r_vertexlight is on, I force every single shader to a single pass. In the cases where it isn't a simple light*texture case, I try and intelligently pick the most representative pass and do some fixups on the shader modulations.
+Hitting tab for the scoreboard sends a command, so you trigger the flood protection if you bang tab a couple times. This has been fixed so that the scoreboard will never send more than one update request every two seconds, but you will need to watch out for it in the existing demo.
 
-This works our great, and brings the graphics load down to the minimum we can do with the data sets.
+The defered model loading has also caused some confusion, but that is a feature, not a bug. :)
 
-Performance is still going to be down a couple msec a frame due to using dynamic compilation instead of dll's for the cgame, but that is an intentional tradeoff. You can obviously slow things down by running a lot of bots, but that is to be expected.
+In previous tests, you hitched for a second or two whenever a client with a new model or skin joined a game.
 
-I am still investigating the high idle dedicated server cpu utilization and a few other issues. The server cpu time will definately be higher than 1.08 due to the dynamic compiler, but again, that is an intentional tradeoff.
+In the demo, when a client joins the game they will be given the model and skin of someone else temporarily, so there is no hitch. The only time it will hitch on entry is if it is a team game and there isn't anyone on the team they join. I make sure the skin color is correct, even if the model isn't.
 
-A set of go-fast-and-look-ugly options:
-[code]
-r_mode 2
-r_colorbits 16
-r_texturemode GL_LINEAR_MIPMAP_NEAREST
-r_vertexlighting 1
-r_subdivisions 999
-r_lodbias 2
-cg_gibs 0
-cg_draw3dicons 0
-cg_brassTime 0
-cg_marks 0
-cg_shadows 0
-cg_simpleitems 1
-cg_drawAttacker 0
-[/code]
+These "defered" clients will be loaded when you bring up the scoreboard. You can do this directly by hitting tab, or you can have it happen for you when you die.
 
-* icons for bot skills on scoreboard
-* r_vertexlight is now "force single pass" for all shaders
-* modified cd key check to be fire and forget on the client
-* file handle debugging info in path command
-* network address type of NA_BAD for failed resolves
-* better command line variable overriding
-* cache scoreboard for two seconds
-* sync sound system before starting cinematics
-* fixed many escapes disconnect from server exiting the game
-* fixed shotgun pellets underwater expending all temp entities
+The point is: you died BEFORE it hitched, not as a result of the hitch.
+
+The scoreboard header is up, but it is still a bit easy to miss.
+
+* fixed high server idle cpu usage (it was spinning in place until maxfps was used!)
+* fixed g_password, which is crashing in the demo
+* moved svs.snapshotEntities to the hunk
+* enable lagometer whenever running a non-local game
+* cg_drawTeamOverlay cvar, set to 0 by default
+* finished authorize work
+* better reporting of unused highwater memory
