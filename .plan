@@ -1,9 +1,11 @@
-+ cinematic paking!
-+ r_dspeeds should include translucent time
-+ alt key stuck donw after alt-enter
-+ bonus flashes
+* finished box sweeping code
+* fix the automenu key problem on bad cinematic
+* blinking black screen palette set issues
+* send dowarp over from server
+* fixed color 0 grabbing
+* bonus flashes
+* Q_fabs
 
-texture releasing from maps isn't uniqued
-scissor triangles
-faster z clip
-make autoexec.cfg work differently because of demos
++ dedicated server
+
+drop stair climb in air height
