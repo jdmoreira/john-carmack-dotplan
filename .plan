@@ -1,27 +1,18 @@
-We would up making tweaks to both maps today, so the data didn't reach final form until a few hours ago.
+A good day of work. I just finished a long test game with all three architectures, and everything looks solid.
 
-I just finished making release candidates for all three architectures, but I already found a couple problems that need to be fixed.
+As far as I can tell, these are ready to go after making installers and such, but everyone else has an oportunity to find bugs while I sleep...
 
-If everything goes perfectly (ha), and I nail these problems immediately when I wake up, then we might make it out tonight, but it is looking a bit doubtful.
+We won't hold up for minor gameplay issues, but if anyone turns up a repeatable crasher I will rebuild everything.
 
+Barring problems, we should start rolling the releases out tonight.
 
-There are a few known issues that I decided NOT to hold the test up for:
-
-The gauntlet is functioning correctly, but the visuals are wrong. The designed behavior is that when you hold down attack it will scan for a target and only punch forward when it hits. The visuals currently show it punching constantly.
-
-Dynamic lighting is currently taking a really excessive amount of cpu time. If you are having performance problems in firefights, you may want to turn it off. The option is in the preferences, or you can just issue "r_dynamicLighting 0" at the console.
-
-The powerup item sounds aren't global across the entire world since I went to the client side predicted items.
-
-There are some cases when a weapon that was picked up with a predicted item and immediately fired doesn't make a muzzle flash.
-
-* fixed fs_copyfiles after ospath split
-* fixed look-at-killer
-* changed railgun impact to plasma dish
-* convert connect packet to infostring
-* put footsteps back in...
-* r_drawsun 0 by default to avoid probs for now
-* fixed event clear overwrite problem
-* client side predict weapon switch on item pickup
-* changed sound fallbacks to "visor" from "male"
-* made turbulent texcoords based off of xyz instead of st
+* fixed crash case on fallback from an unsupported fullscreen
+* fixed overrun with very fast system connecting to a very lagged server
+* fixed bad Z_Free on sounds not found
+* fixed autoswitch with sync clients
+* fixed losing console field on positive histories
+* fixed demo recording and playback with new net code
+* handle signed bit fields in msg code
+* fixed playerstate event bit loss on encoding
+* fixed "bad clientnum on player entity"
+* reenabled corpses sinking into ground
