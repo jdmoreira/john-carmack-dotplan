@@ -1,27 +1,35 @@
-Now that all the E3 stuff is done with, I can get back to work...
+The SMP support is solid enough to play with now. The only feature that is still broken is light flares.
 
-I was stuck in a room the entire time doing press interviews, but it seemed to have gone well. It was mentioned to me that there were a few people on the show floor with forged badges that read "John Carmack -- Id Software". As if forged email / irc / icq isn't enough of a problem. Sigh.
+As a happy consequence, some of the cleanup work I did for SMP gave a couple percent speedup even when running without the separate thread.
 
-The "download" crashtest was first reported by Rick Hammerstone. That was a pure dumbass mistake on my part.
+On my development system, a dual 300 mhz intergraph realizm II, the low res timedemo scores went from 27.8 to 37.8 with "r_smp 1". This is only a 35% average speedup, but at some times (lots of dynamic lights in complex scenes) the speedup is 90%+. Gameplay is noticably smoother.
 
-I should be sending the accumulated crashtest bounties off tomorrow.
+The rendering thread is almost always the blocking factor, so the faster the card and OpenGL driver, the larger the speedup will be.
 
-The plan right now is to have an update release next week that will have lots of bug fixes and cheat protections, but not too many new user visible features.
+This is explicitly a two thread producer / consumer, so there is no benefit to more than two processors. The app is well behaved, using sleeping syncronization so that you usually still have half a processor free for other operating system functions.
 
-I finally got around to implementing dual processor acceleration today. I still have a couple issues to resolve and some more rearranging to do, but it is giving 20%+ speedup right now in a worst-case situation for it.
+Hopefully we will be able to test with some fast consumer cards sometime soon.
 
-When completed, I expect the average speedup to be in the 40% to 80% range, depending on what is going on and the video configuration. Scenes with lots of dynamic lighting and lots of sounds and other client processing going will show the largest speedups. It helps the slow scenes more than the fast scenes, which is basically what you want.
+------
 
-I am going to shake this out with the Windows (NT) code first, but it should definately make its way to the linux port eventually.
+A lot of people asked what was done differently this time vs the last time I tried (without benefit) to use SMP.
 
-I know SMP is a que for all the BeOS folks to ask about ports, so I'm going to head that off: Be has all the code for Q3 (and Q2, for that matter), and a version of Q3test should be available by the time they ship a release OS with OpenGL hardware acceleration.
+My original attempt was to make a DLL that intercepted all OpenGL calls and let a separate processor execute them. The benefit would have been that all OpenGL applications could have gone faster. The problem was that the bandwidth required to encode all the commands was enough that the processor overhead was as much as it would have taken to just do the geometry on the main processor.
 
-There will probably also be an SGI-irix port.
+It would have still been a win if the geometry side was doing lots of work, like multiple lights, user clip planes, and texgens, but for the vast majority of geometry, it didn't balance out. If someone wanted to try that using the PIII or AltiVec streaming memory operations, it could probably still work.
 
-Regarding both of those ports: they are not supported ports, and will be maintained by volenteers (like the current MacOS X port). Update releases will lag the official ones, and we won't committ to ANY dates.
+The current SMP code is implemented directly into the renderer, and a lot of things were moved around and double buffered to allow it to use data in place, instead of having to copy it off.
 
-I am doing all of my development on intergraph and sgi-NT hardware, but when I have everything rock solid, I will give Nvidia and ATI's NT drivers a try. I would be somewhat shocked if they didn't explode -- I doubt multiple threads playing occasional tag team on a context has been well tested.
+------
 
-True, only a tiny fraction of our players (probably less than 1%) will be able to take advantage of this, but I consider SMP usage to be an important technology to nurture over the coming years.
+Some people expressed surprise that Quake3 wasn't threaded already.
 
-The top of the benchmark chart should be an SMP system (assuming the NT drivers have all the optimizations of the '98 drivers), and it will also be possible to build a reletively cheap SMP system (say, dual 400's) that outperforms the best single processor system.
+Threading has been presented so often as the "high tech" "cool" way to program, that many people aren't aware of the downsides.
+
+A multi-threaded program will always have somewhat lower throughput when running on a single CPU than a single threaded program that polls in explicit places. The cost of a context switch at the cpu level is negligible, but the damage that it can do to the cache hierarchy can add up to a noticeable amount in bad cases.
+
+The much larger problem is that you lose tight control over when things occur. If the framerates are low enough, it isn't a huge issue, but for applications running at 30+ fps, you really don't want to trust the OS scheduler to coordinate multiple threads and have them all get in every frame. Yes, with explicit sleep() calls you can sort of get it working, but at that point, you might as well not be using threads.
+
+A good example of not-quite-in-sync issues in the windows mouse performance. A PS/2 mouse only samples 40 times a second, so when you get an app updating at around that speed, you will get 0/1/2 scheduling variances.
+
+They are also not terribly portable, and a pain in the ass to debug.
