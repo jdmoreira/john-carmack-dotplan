@@ -1,21 +1,34 @@
-* make random respawn option default and work
-* don't drop empty weapons
-* teleport angles
-* teleporters at player spawn points
-* fixed telefrag self on respawn
-* fixed userinfo on initial entering
-* precache land sounds
-* don't change console height until connection packet
-* a disconnecting client shouldn't generate a badread
-* remove rocket fragments in dm
-* damage anything flag
-* don't call duplicated pm.touchents
-* client parse entities array
-* no weapon toss in single player
+* no client pmove at all with prediction off
+* railgun crashes
+* fixed rub stuck bug
 
-sound dies after several hours?
-scoreboard faces
-show killed by face on scoreboard
-deal with old_origin properly
-delay cdtrack play until connected
-can't escape out of loadgame menu when dead?
++ gravity in pmove
++ control config is messed up
++ seperate client event processing from parsing
++ are baselines not working right?
+
+make-item-selected command
+notched look up / down commands
+keyboard look
+map name is messed up on start server
+deathmatch character weapons
+unify uses of ent / client / etc in source?
+no player actions when paused
+check incoming_acknowledged for pings
+master servers
+dm respawn isn't clearing pitch?
+teamed teleport destinations
+teleport angles
+# form for kicking players
+make showinventory a stat bit, like layout
+unify all data file references for easy downloading?
+how to handle different quality versions?
+if crushed in dm, respawned outszide world?
+shadows
+rename entity_t->flags to renderfx
+checksum client to server messages
+smooth out step up
+does spectator work?
+trinity: coarse radiosity source lattice for dynamic lights?
+oldorigin issues
+replace with a previous state send?
