@@ -1,20 +1,21 @@
-* flag reorg
-* teleporters
-* put holdangles into pmove.pm_type
+* make random respawn option default and work
+* don't drop empty weapons
+* teleport angles
+* teleporters at player spawn points
+* fixed telefrag self on respawn
+* fixed userinfo on initial entering
+* precache land sounds
+* don't change console height until connection packet
+* a disconnecting client shouldn't generate a badread
+* remove rocket fragments in dm
+* damage anything flag
+* don't call duplicated pm.touchents
+* client parse entities array
+* no weapon toss in single player
 
-+ pm.touchents holds duplicates
-+ damage anything flag
-+ precache chat sound
-+ teleporters at player spawn points
-+ remove rocket fragments in dm
-
-rename entity_t to rentity_t ?
-teleport sequence bit to make ef_teleport reliable?
-turn any event into a temp entity? (with or without angles)
-unify sound starting as temp entities?
-is time being over quantized by timegettime?
-order events by priority
-login / logout as events?
-all sound channels as extra events?
-
-trinity: objects should have enabler inputs as well as multiple impulse targets
+sound dies after several hours?
+scoreboard faces
+show killed by face on scoreboard
+deal with old_origin properly
+delay cdtrack play until connected
+can't escape out of loadgame menu when dead?
