@@ -1,21 +1,9 @@
-* deathmatch onyl spawn doesn't work
-* drowning damage
-* changed QuakeEd to get progs from id1_
-* added colors to QuakeEd entities
-* got rid of /lquake, moved QuakeEd caches to /qcache
+* fixed quakeed bug to allow carrying selection to new map
+* fixed updated static bug
 
-+ don't take datagrams until acked second message
-+ not-dm is intangible
-+ sally torches not spawning
-+ client called twice?
-+ combine damage messages from super shotguns
-+ gib zombies lying down?
-+ more water friction
-+ swimming bubble noise
-+ light the weapons differently in bright areas
-+ keyboard freelook
-+ move QuakeEd start position to playerstart
++ demons that fall through world
++ "wait" exec command
++ end of line exec bug
 
-stop wall climbing
-sleeping pause
-raise rocket launcher with 0 ammo
+do style lighting for alias models
+for release: Id Trademark graphic
