@@ -1,9 +1,15 @@
-* triggered trains
-* began work on sound code
+* fuxed button triggered delays
+* added classname to light error message
+* demon more damage
+* sounder objects
+* light_switchable
 
-+ edge friction jumping
-+ edge friction in air?
++ grenade proximity explosions
++ fix jumping off edges
++ wizard fast shots
++ target lights for controling them
++ plat hit on head bug
++ ambient light
 
-ambush guards
-temp ent precache
-does pacifier not work on net games?
+spiral the view when gibbed
+level based gravity
