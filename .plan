@@ -1,15 +1,21 @@
-The remote server console commands are fully implemented for  QuakeWorld.
+PACKET FILTERING
 
-To allow remote administration, the server must set the "password"  cvar.  By default, remote administration is turned off.
+QuakeWorld supports two types of filtering: IP packet filtering  and user id filtering.  Userid filtering is the most convenient way  to keep a specific person off of a server, but because anyone can  create as many accounts as they want, a malicious user could just  keep logging back in with a new account.  If their ip address is  banned, they won't be able to log on with any account from that  computer.  Unfortunately, most dialup accounts give a different ip  address for each connection, so you may be forced to ban an entire  subnet to keep a specific person off.
 
-On a client, if you set the "password" cvar to the same value,  you can issue "rcon" commands to the remote server :
+You can add or remove addresses from the filter list with:
 
-rcon <server command> <arguments> ...
+addip <ip> removeip <ip>
 
-You can go to different levels, shut the server down, change  cvars, ban people, etc.  The output from the command is redirected  over the net and will be echoed on the remote console.
+The ip address is specified in dot format, and any unspecified  digits will match any value, so you can specify an entire class  C network with "addip 192.246.40".
 
-You can also execute commands without even connecting to the  server (if it was full) by setting the "rconadr" cvar to the full  internet address (including port) of the system you want to administer.
+Removeip will only remove an address specified exactly the same way.  You cannot addip a subnet, then removeip a single host.
 
- 2:00 in the morning:
+iplist Prints the current list of filters.
 
-My testarossa snapped another input shaft (the third time).   damn dman damn. >1000 HP is bad for your drivetrain.
+writeip Dumps "addip <ip>" commands to iplist.cfg so it can be execed at  a later date.  The filter lists are not saved and restored by  default, because I beleive it would cause too much confusion.
+
+filterban <0 or 1>
+
+If 1 (the default), then ip addresses matching the current list  will be prohibited from entering the game.  This is the default  setting.
+
+If 0, then only addresses matching the list will be allowed.  This  lets you easily set up a private game, or a game that only allows  players from your local network.
