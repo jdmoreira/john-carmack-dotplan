@@ -1,18 +1,16 @@
-* fixed soundlist
-* explosion through walls doesn't damage
-* monsters don't melee through walls
-* fixed memory trash from restarts
-* changed signon messages to more client requests, removed buffers
-* invisible clip solids
+* fixed efrag allocation on restart (really)
+* fixed static sprite placement
+* fixed light casting from torches
+* fixed spawning angles
+* fixed savegame and multi player baseline object startup
+* made QuakeEd go to info_playerstart at level load
 
-+ wake up monsters through walls
-+ is vid palette setting fixed?
-+ remove up/down movement from non-noclip 
-+ entity bsp clipping for shots and monster moves
-+ make QuakeEd center on start position
-+ climb out of water
-+ light switches?
++ fix damage trace through entities
++ keyboard freelook
 
-bsp sticking point
-no aim key
-don't include trigger and clip mip textures in files?
+spinning gibs on floor
+very high framerates mess up
+extra back attack damage
+buffered IO problem on romero's machine
+stereo still isn't right
+partical puffs
