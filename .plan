@@ -1,19 +1,26 @@
-*	fix incorrectly updated origin bug
-*	added alias backpack and armor
-*	fixed weapons sticking into wall
-*	changed "connected to server" to "connected to map"
-*	fixed console
-*	armor skin numbers
-*	fixed "not shooting" bug
-*	changed sound back to origin based instead of entity based
+*	fixed sound origins again
+*	fixed crushing stuff
+*	added "wait" to triggers
+*	added startup stuff for demo
+*	swimming direction stuff
+*	added '+' sizeup as well as =
+*	changed "unnamed" to "player"
+*	fixed skinnum clearing
 
-+ swimming directions
-+ quit scores are wrong
-+ screen flicker crap
-+ radius damage sight check
-+ crushing issues
-+ bodies stopping in midair 
++ gibbs need to fall after trap doored
++ ambient
++ make bubble sound while swimming forward
++ server speed
++ case insensitive on key names
++ hunk alloc
++ nans
++ better notify scrolling
++ final score dumping
++ negative frags
++ reconnect problems
 
-dimmed out weapons
-follow killer
-spin head inside gib
+backpack dropping underlava
+"hostname" makes gane think it is a server
+swimming models
+weapon cycling
+dedicated server stuffcmds
