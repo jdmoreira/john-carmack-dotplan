@@ -1,15 +1,23 @@
-* qe4 project on command line
-* qe4 rshcmd replacement
-* qe4 select face
-* qe4 avoid multiple autosaves
-* qe4 region selected brushes
-* bindlist command
-* imagelist command in ref_soft
+* cls.fixedimage support
+* no frame before cinematic fix
+* menu during cinematic fix
 
-+ leaktest
-+ load game.dll from gamedir
++ ingame cinematic state
++ indemo cinematic state
+- move fraglogfile into game dll
++ layout language beyond simple centerprint
++ killserver needs to kill demos as well
++ must kill cinematic after menu, or restart palette
++ disconnected can be either at a console or running the demo + intro cinematic
+needs to be part of the game
 
-pendulum motion
-no jump on lava floor?
--game
-16 bit wall textures
+force nolerp lag?
+put ip filtering in game dll
+handle localmodels explicitly, rather than as *num
+don't send heartbeats if not running a network game?
+move viewmodel for all accelerations, including jumping and landing
+fade out centerprints
+design quit screen to allow addons to get credits
+be consistant with window title bars
+mp3 audio
+qe4: downsample option, nomipmap option
