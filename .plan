@@ -1,22 +1,22 @@
-* moved ambient sound calculations to vis program
-* moved file caching option to host_parms
-* removed keybindings[1]
-* added ambush flag to monsters
-* made precache_* functions also return their parameter
-* added precache_*2 functions for the registered version seperation
-* modified qcc for -pak / -pak2 option to build shareware / registered
-* random intermission_info selection
-* automatic configuration saving
-* angle 0 jump triggers
-* fixed solo map name centering
+* QuakeEd: forbid dragging position / direction when textured
+* constrained all file writes to the game directory to close security
+holes
+* allow multiple pak files intermixed with directory trees in the search
+path
+* full specification with: -basedir, -game, -cachepath, or -path
+* moved demo list to cls, fixed efrag bug on second demo playback
 
-artifact blinking before removal
-deathmatch invisibility
-blinking cursor for configuration screen
-automatic config saving
-sum quad damage for gibbing
-shrink cl_entities to be cl_update_entities + cl_baselines
-tim5 armor fall through bug
-radius damage opening secret doors
-only surpress autocenter when not on ground, not water check
-clearing memory twice, allow baselevel to move if not connected
++ bring up menu on any input during demos
++ do "loading" plaque from demo to demo
++ demo transition problem
++ automatic pak grabbing frame game dir
++ saving while in a trigger field kills it?
+
+bump edicts again
+acknowledge all - command line parms as they are accepted?
+QuakeEd: don't explode if /qcache isn't present
+qcc option to re-bsp models and maps
+shambler lightning needs to be exactly positioned
+joysticks
+keybinding saving isn't right
+claim all args from command line, or print warnings?
