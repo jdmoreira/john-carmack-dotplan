@@ -1,53 +1,42 @@
-* weapon cuycling command
-* trapped bug with maps without textures
-* increase key/value size in QuakeEd
-* qcc -pak option
-* "flechettes" to nails
-* added "killtarget" on all SUB_UseTargets
-* secret doors do SUB_UseTargets
-* secret door touch messages
-* cycle entity allocation
-* versioning in savegames
-* save skill in savegame
-* don't set onground when standing on another monster
-* fixed loadgame during demo bug
-* put falling crunch on voice channel so it overrides pain sound
-* fopen demos inside packfile
-* automatic ambient sounds
+* fixed recursive barrel death
+* new characters
+* better ambient name parsing
+* con_dpritnf for developer messages
+* start messages out of maps
+* directional touch triggers
+* remove qtest license stuff
+* fixed off by one error with ambient leaf calc
+* level spawning messages
+* clear input line every time console goes up
+* moved all non-refresh vid.buffer access into draw.c
+* removed alphalumpy -- use qlumpy
+* automatic extension and dest file creation for qbsp
+* merged id1 and id1_ development hierarchies
+* Made QuakeEd projects directory independent
 
-+ bad recursive explobox?
-+ ambient sounder tents
-+ tab stats
-+ center print sequence stuff
-+ demo files in packfiles
-+ powerups
-+ underwater looping sound
-+ pass source as parm for +defs
++ raven's bug map
++ static point ambients
++ hell knight smash
++ flameb1 - 11
++ explodes on manually going to bad map
++ play humm1 for teleport textures
++ parms for all + commands to identify source
 
-coop start spot
-don't accept mouse view when paused
-"you got # shells" for item messags
-precache_ambient
-visbug.map
-seperate impact from damage
-create pak files with search path?
-tim5 drop item on monster bug
-texture animation speeds
-squash to paste
-doubled "clearing memory"
-parse /* */ comments in config files
-explosion has bad colors in it
-proof of purchase
-lightning gun
-treading water
-looking down towards ground bug
-deathmatch level transitions
-better lava balls
-is zbuffer precision maximized?
-alias subdivider used wrongly in zoomin mode
-permanently shifted view angle on restart
-optimized single channel ambient mixing
-are 0 volume sounds hanging around?
-jrbase3 old bsp explosion
-auto jump out of water
-demo file version numbers
+blood/chunk spray direction from claw attacks
+shootable base texture needs an off frame
+lint the utilities
+cache console background
+make all jump trigger targets have a land sound
+center menu in high res
+slipgate animations
+loading plaque, no console between levels
+supress input line
+fix timedemo with cycling demos
+gun jerking
+!cl.worldmodel is no longer valid?
+mike signon messages stay in notify lines
+break off anger at another monster if can't reach in ten seconds
+debounce all keys?
+center print level messages
+still dropping pack in single player?
+debug alpha modelgen
