@@ -1,39 +1,47 @@
-First impressions of the SGI visual workstation 320:
+We are finally closing in on the first release of Q3test.
 
-I placed an order for a loaded system ($11k) from their web site two months ago. It still hasn't arrived (bad impression), but SGI did bring a loaner system by for us to work with.
+As you have probably heard by now, the first release in going to be the mac version, probably followed by the linux version, and only then the windows version.
 
-The system tower is better than standard pc fare, but I still think Apple's new G3 has the best designed computer case.
+Some of you are busy getting all bent out of shape about this.
 
-The wide aspect LCD panel is very nice. A while ago I had been using a dual monitor LCD setup on a previous intergraph, but the analog syncing LCD screens had some fringing problems, and the gamma range was fairly different from a CRT. The SGI display is perfectly crisp (digital interface), and has great color. The lighting is a little bit uneven top to bottom on this unit -- I am interested to see how the next unit looks for comparison.
+We want to get a lot of people playing with the test to find bugs and offer well thought out suggestions, but there are classes of bugs and suggestions that emerge in each order of magnitude of exposed testers.
 
-Unfortunately, the card that they bundle with the LCD if you buy it separately is NOT a good 3D accelerator, so if you care about 3D and want this LCD screen, you need to buy an sgi visual workstation. Several of the next generation consumer cards are going to support digital flat panel outputs, so hopefully soon you will be able to run a TNT2 or something out to one of these.
+If a given bug is going to show up when a thousand people have looked at it, but we had released it to a hundred thousand people, then we are going to have a lot of duplication to wade through.
 
-The super memory system does not appear to have provided ANY benefit to the CPU. My memory benchmarking tests showed it running about the same as a standard intel design.
+The mac testers will find some obvious problems. We will fix them. The later releases will be better.
 
-Our first graphics testing looked very grim -- Quake3 didn't draw the world at all. I spent a while trying to coax some output by disabling various things, but to no avail. We reported it to SGI, and they got us a fix the next day. Some bug with depthRange(). Even with the fix, 16 bit rendering doesn't seem to work. I expect they will address this.
+Even if we had the windows distribution ready to go right now, I would still seriously consider releasing one of the mac or linux versions first because it will make our tracking a lot easier.
 
-Other than that, there haven't been any driver anomolies, and both the game and editor run flawlessly.
+The holdup on the windows side are the issues with updated driver distribution. The game itself doesn't have any holdups.
 
-For single pass, top quality rendering (32 bit framebuffer, 32 bit depth buffer, 32 bit trilinear textures, high res screen), the SGI has a higher fill rate than any other card we have ever tested on a pc, but not by too wide of a margin.
+We could do a windows release for just, say, voodoo2 owners and get some of the benefit of a controlled release, but it wouldn't really work out, because everyone would figure out that it can be made to (almost) work on lots of other cards by tweaking some values. That type of feedback would not be useful, because we KNOW that there are problems with most of the current drivers. We have been working with all of the vendors for the past year to get them all straightened out.
 
-If your application can take advantage of multitexture, a TNT or rage128 will deliver slightly greater fill performance. It is likely that the next speed bump of both chips will be just plain faster than the SGI on all fill modes.
+Glsetup is going to be slick -- just run it and it will Do The Right Thing for your video configuration.
 
-A serious flaw is that the LCD display can't support ANY other resolutions except the native 1600*1024. The game chunks along at ten to fifteen fps at that resolution (but it looks cool!). They desperately need to support a pixel doubled 800*512 mode to make any kind of full screen work possible. I expect they will address this.
+We hope it will be done soon, but there are factors out of our direct control involved.
 
-Vsync disable is implemented wrong. Disabling sync causes it to continue rendering, but the flip still doesn't happen until the next frame. This gives repeatable (and faster) benchmark numbers, but with a flashing screen that is unusable. The right way is to just cause the flip to happen on the next scan line, like several consumer cards do, or blit. It gives tearing artifacts, but it is still completely usable, and avoids temporal nyquist issues between 30 and 60 hz. I expect they will address this.
+Don't be spiteful. This is just the beginning of the testing and release process.
 
-Total throughput for games is only fair, about like an intergraph. Any of the fast consumer cards will run a quake engine game faster than the sgi in its current form. I'm sure some effort will be made to improve this, but I doubt it will be a serious focus, unless some SGI engineers develop unhealthy quake addictions. :-)
+ One conspiracy theory suggests that Apple is somehow getting us to do this.
 
-The unified memory system allows nearly a gig of textures, and individual textures can by up to 4k by 4k. AGP texturing provides some of this benefit for consumer cards, but not to the same degree or level of performance.
+What we have "gotten" from Apple is a few development machines. No cash payoff. No bundling deal. No marketing contract.
 
-The video stream support looks good, but I haven't tried using it yet.
+I am looking at this long term. I want to see OS X become a top notch platform for graphics development. I think highly of the NEXTSTEP heritage and I might move my development from NT if it turns out well. There is a lot of groundwork that needs to be laid with apple for this to happen, and my working on the mac right now is part of that. Plus a lot of complaining to various apple engineers and executives. :-)
 
-Very high interpolater accuracy. All the consumer cards start to break up a bit with high magnification, weird aspects, or long edges. The professional cards (intergraph, glint, E&S, SGI) still do a better job.
+To be clear:
 
-SGI exports quite a few more useful OpenGL extensions than intergraph does, but multisample antialiasing (as claimed in their literature) doesn't seem to be one of them.
+At this time, there is no mac that is as fast for gaming (or just about anything, actually) as a pentium III with a top of the line 3D card. Period. I have been misquoted by some mac evangelists as saying otherwise.
 
-Overall, it looks pretty good, and I am probably going to move over to using the SGI workstation full time when my real system arrives.
+The new (blue and white) G3 systems are very good systems in many ways, and make a perfectly good gaming platform. However, a high end wintel machine just has more horsepower on both the CPU and the 3D card.
 
-I was very happy with the previous two generations of intergraph workstations, but this last batch (GT1) has been a bunch of lemons, and the wildcat graphics has been delayed too long. The current realizm-II systems just don't have enough fill rate for high end development.
+A 400 mhz G3 performs about the same as a 400 mhz PII if they aren't fill rate limited, where the faster cards on the PC will give about a 25% advantage. A 500 mhz PIII with an appropriate card in 30% faster than the best mac you can buy.
 
-For developers that don't have tons of money, the decision right now is an absolute no-brainer -- buy a TNT and stick it in a cheap system. Its a better "professional" 3D accelerator than you could buy at any price not too long ago.
+The multi colored iMacs, old G3 desktops, and powerbooks can play Quake3, but the RagePro 3D acceleration defines the absolute bottom end of our supported platforms. A serious gamer will not be satisfied with it.
+
+Voodoo cards are not currently supported by the OpenGL driver, which is very unfortunate because many serious mac gamers own voodoo cards. I hope Apple and 3dfx will be able to correct this soon, but I certainly understand Apple's prioritization -- obviously, good support for the OEM video options is of primary importance.
+
+The voodoo performance will still lag the windows platform by some amount, but some strides have been made in that area recently, so I expect good performance,
+
+Gaming is not a reason to buy a mac, but Apple is taking steps so that it may not be a reason to avoid a mac if you have other reasons for wanting one.
+
+MacOS still sucks.
