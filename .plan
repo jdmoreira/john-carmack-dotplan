@@ -1,18 +1,33 @@
-+ tag_game, tag_level
-+ new game must clear
-- need to save game state at last level entered as well as exact current
-+ save level on exit..
-+ spawnpoint to game dll wrong?
-+ collapse sv_phys into something else?
-+ skip all pixelformat stuff on minidrivers?
++ skill levels need to be archived with server state!
++ angle clamp on server is broke again
++ don't shrink status bar with window
++ make sure all char * in edicts are copies, not just references
++ difference between reentering a level and reloading it
 
-get rid of Com_SetServerState() ?
-ERR_DROP?
-status command that prints out server and client state?
-don't allow anything but CRC checked pak file access in a demo
-client userinfo change updates
-worry about cvar info string lengths
-make sure IP is visible to game
-track deaths as well as fregs?
-directmouse?
-view shaking from explosions?
+check all savegame files for disk space errors.
+current is automatically updated whenever a level is exited
+archive the level being exited if not leaving the unit
+save the map to be entered, SKIPPING ANY CINEMATICS!
+end of game will not have a final map, so don't save
+savegame does NOT update current, the level archive and server
+is written directly to the new directory
+
+new game
+
+single player game
+on death + press, bring up loadgame screen
+deathmatch
+on death + press, respawn
+coop
+on death + press, respawn
+
+need to have the game start up without TCP/IP unless asked for
+
+dir command with sys_find*
+ping equalization?
+set userinfo->ip on each server connect
+high quality / low quality sound option in menu, create a special sample for
+testing
+fix svs / sv to be more game/level oriented
+make coop games allways four player?
+wav lag seems worse
