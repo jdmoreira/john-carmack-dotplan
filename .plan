@@ -1,23 +1,11 @@
-Ok, I'm back on QuakeWorld.
+There is a BETA distribution of 1.05 up on our ftp site.
 
-While working on the new chat console, I fixed up a few little things with the regular console:
-The pgup/pgdn keys now autorepeat.
-The display does not pop down to the bottom when a new line is printed.
-If you aren't at the bottom, a few ^ ^ ^ are printed on the last line.
+ftp://ftp.idsoftware.com/idstuff/unsup/q105beta.exe
 
-There is now a message level you can set to cut down on the number of messages you get from the server (it saves a bit of bandwidth, too).
-Level 0 gives everything.
-Level 1 does not print item pickup messages.
-Level 2 does not print player obituaries.
-Level 3 does not print any messages from the server.
-Level 4 does not print chat messages.
+It includes quake.exe winded.exe progs.dat, and a zip of the latest .qc files. Back up your current version before messing with this, in case something is broken.
 
-Player skin support is much nicer in QuakeWorld. There is a qw\skins directory, where you can just put a .pcx files for each skin. This will scale properly to hundreds of skins if you want to download them all.
+There is new source code available. ftp://ftp.idsoftware.com//idstuff/source/qutils.zip has win-32 compiled versions and VC++ projects for all of the quake command line utilities. The qbsp/light/vis programs have not been tested all that well here, because we still use a dec alpha running unix for most of our work, but it has been converted from doubles to floats, which should reduce the memory requirements quite a bit (and possibly cause more numeric instabilities...).
 
-I am still unsure of how much freedom I want to give with the skins.
+I also uploaded the DOOM ipxsetup / sersetup source code, which we haven't had on our ftp site before.
 
-One school of thought is that you just set the "skin" value to any name you want. If the other players don't have it, they fall back to the default.
-
-The other school of thought is that skins are the restricted property of a specific clan, and only clan members get custom skins.
-
-We have the ability to delegate specific information setting abilities to clan leaders. To join a clan, you have to get the leader to add the clan field to your user account. It is in the protected masterdata, so you can't edit it yourself.
+We are going to begin internal testing of a 1.05 Quake release tomorrow. When we upload for general release, we will also upload the current .qc source. The old qcc.tar.gz file is still present on the ftp site for the original .qc files for now. 
