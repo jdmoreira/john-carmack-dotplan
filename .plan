@@ -1,38 +1,54 @@
-* handle escape special to prevent unbinding, and pass through to menus
-* allow attack to restart as well as jump
-* copied more cmd_argv through recursion
-* boss lead player in hard mode
-* removed blaster warnings on v4 cards
-* blinking icons
-* protect all cvars and commands that could be deathmatch cheats
-* mvoed squish obit before fell to death
-* fixed static sound false combining bug
-* randomize axe swings
-* never go into pain frames during weaponframes
-* combined axe damage frames
-* prevent bmodel teleport
-* registered trigger only accepts players
-* fixed activated door beeping
-* fixed linked door messages
+* removed hard coded number order for sbar
+* moved palette and colormap to discrete lumps
+* all help screens
+* delay enter sound until after menu frame drawn
+* delated recursive spawn death
+* changed sound override rules to prevent monsters from eclipsing player
+snds
+* delay monster use reaction to guarantee sound after teleport
+* added reliable_datagram
+* fixed powerup respawning
+* clear all of sv in spawn server
+* heads bounce from telefrag
+* fixed sizing bug with telefragging
+* fixed force retouch bug
+* bodyque objects get movetypes
 
-player crushed on e1m2 bug
-make enter play slide noise on menu item adjustments
-no head bobbing when dead
-gib head look around
-sink into rising plats
-hack check for stuck
-no such frame for gibbed dog head
-bmodel dissapearing problem in e4m6
-gib by damage isntead of negative health
-option for listen servers to send out less packets?
-crank menu3 sound up in volume
-teleported monster flag
-fill sky volumes differently?
-shambler lightning hand frames
-top line of console is not clipped correctly
-door sounds / messages
-weapon change rules
-no gravity when in solid volume
+player lightning source 16+ higher
+check dead player coop transition
+talk message needs to clear background
+dissallow save from intermission
+different default player colors?
+kick clients off if unsent message gets too big
+powerup flashes
+demon and shambler rethink between claws
+make boss face direction of throw
+deathmatch weapon switching
 double shots for monsters in nightmare mode
-use multiple help screens
-swim bubbles on forard move as well as jump
+hot key menus should return to game with a single escape
+item respawn with no pickup problem
+floating heads
+view center snapping
+deathmatch intermission screen
+directory checks
+no frame bug with eyes
+head floating in air
+reliable broadcast
+no exit option for persistant deathmatch servers
+statue monsters
+change pak files to pakS0 pakR0 
+triggered teleporters aren't working reliably
+play sound when menu goes away
+local sounds die sometimes
+teleport effect
+sounds on locked doors
+pops at end of sound buffer: not mixing entire thing?
+exp.tri spawn explosion frame
+func_episodegate print messages
+teleporter articles
+fix "load failed" message
+coop savegames
+lightning gun on secret doors.
+
+explain "kill" in manual
+explain dedicated servers for large coop games in manual
