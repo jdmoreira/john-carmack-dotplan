@@ -1,32 +1,27 @@
-We had to upgrade the crashtest machine to NT sp 5, because some people were attacking it with windows crashers. Those don't count.
+Now that all the E3 stuff is done with, I can get back to work...
 
-Crashtest #3 from [iBO]QWhAX0R was a combination of two problems:
+I was stuck in a room the entire time doing press interviews, but it seemed to have gone well. It was mentioned to me that there were a few people on the show floor with forged badges that read "John Carmack -- Id Software". As if forged email / irc / icq isn't enough of a problem. Sigh.
 
-The symptom was disconnecting all clients with an illegible server message. This turned out to be caused by the fact that I was parsing strings out of my net buffers with a MSG_ReadChar() function, and I was checking for EOF as a negative one return value. I had to change this to a MSG_ReadByte() call, because -1 was showing up in the messages, which then caused a parse error because it wasn't really the end of the message.
+The "download" crashtest was first reported by Rick Hammerstone. That was a pure dumbass mistake on my part.
 
-The actual root of that issue was code like this:
-[code]
-{
-	char buffer[MAX_STRING_CHARS];
-	...
-	strncpy( buffer, input, sizeof(buffer) - 1 );
-	...
-}
-[/code]
+I should be sending the accumulated crashtest bounties off tomorrow.
 
-No buffer overruns are possible, but buffer is not forced to be zero terminated if on the stack. I'm pretty sure this was a result of copy-and-paste code where buffer used to be a static with a guaranteed zero, but it made me find several other places where similar things were happening.
+The plan right now is to have an update release next week that will have lots of bug fixes and cheat protections, but not too many new user visible features.
 
-I had started using a Q_strncpyz() function a while ago that guarantees a trailing zero and doesn't require the -1, but it turned out that between code I had written a long time ago, and code that either Cash or Brian had added, there were still a lot of normal strncpy calls around. A lot of them were wrong, too. Either missing the -1, or missing the dedicated 0 fill in.
+I finally got around to implementing dual processor acceleration today. I still have a couple issues to resolve and some more rearranging to do, but it is giving 20%+ speedup right now in a worst-case situation for it.
 
-Crashtest #4 from Jim Paris was a variation on the first part of #3.
+When completed, I expect the average speedup to be in the 40% to 80% range, depending on what is going on and the video configuration. Scenes with lots of dynamic lighting and lots of sounds and other client processing going will show the largest speedups. It helps the slow scenes more than the fast scenes, which is basically what you want.
 
-Only one of these attacks so far has been a server crasher, but I have been giving the bounty for anything that immediately kicks all the players. I probably won't give it for attacks that only overflow some lagged clients, but I'll evaluate as they happen.
+I am going to shake this out with the Windows (NT) code first, but it should definately make its way to the linux port eventually.
 
-I am off to E3 now for a bunch of PR silliness, so if crashtest goes down, it won't be back up for a while...
+I know SMP is a que for all the BeOS folks to ask about ports, so I'm going to head that off: Be has all the code for Q3 (and Q2, for that matter), and a version of Q3test should be available by the time they ship a release OS with OpenGL hardware acceleration.
 
-* fixed crashtest 4
-* fixed crashtest 3
-* fixed jumping-over-item pickup prediction error
-* made "Couldn't load sound" a developer only warning
-* fixed demo recording not including portal surface entities
-* precache grenade bounce sounds
+There will probably also be an SGI-irix port.
+
+Regarding both of those ports: they are not supported ports, and will be maintained by volenteers (like the current MacOS X port). Update releases will lag the official ones, and we won't committ to ANY dates.
+
+I am doing all of my development on intergraph and sgi-NT hardware, but when I have everything rock solid, I will give Nvidia and ATI's NT drivers a try. I would be somewhat shocked if they didn't explode -- I doubt multiple threads playing occasional tag team on a context has been well tested.
+
+True, only a tiny fraction of our players (probably less than 1%) will be able to take advantage of this, but I consider SMP usage to be an important technology to nurture over the coming years.
+
+The top of the benchmark chart should be an SMP system (assuming the NT drivers have all the optimizations of the '98 drivers), and it will also be possible to build a reletively cheap SMP system (say, dual 400's) that outperforms the best single processor system.
