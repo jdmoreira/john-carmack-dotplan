@@ -1,33 +1,31 @@
-I have been working on our memory footprint for the past couple days. There are two types of paging that occur:
+I have been getting a lot of requests for commentary on two subjects lately:
 
-One time only paging that eventually settles down after you have run around the entire level a few times. This can be a result of having lots of data around that isn't actively used during the game, or was only used at startup.
+Nvidia's new geometry accelerated card with the funny name.
 
-True capacity misses, where the game is actually touching more memory during play than you have available. This is usually due to there just being too many textures and models.
+It is fast. Very, very fast. It has the highest fill rate of any card we have ever tested, has improved image quality over TNT2, and it gives timedemo scores 40% faster than the next closest score with extremely raw beta drivers.
 
-Loading a large map with full resolution, 32 bit textures and mipmaps consumes almost 40 megs of texture space. The default of picmip 1 and 16 bit textures reduces that to six or seven (not all images observe picmip) in theory, but some OpenGL implementations keep a 32 bit version of the texture around even if the card only uses 16 bit (I consider this inapropriate), so it may still be twelve or more megs just for the images.
+The throughput will definately improve even more as their drivers mature.
 
-I have been able to save a couple megs off of the true capacity requirements by not rolling through some larger buffers when not needed (not smp and not dedicated server), and several megs more of one-time data mostly by moving a lot of static tables to dynamic allocation.
+For max framerates in OpenGL games, this card is going to be very hard to beat.
 
-I can probably save another meg of true capacity and I think three or four megs of initialization data. The big thing that I might be forced to do is go to a skeletal animation system. I would hate to do that at this late a point in the project, but it would save about two megs per player model in the game.
+Q3's target of about 10,000 triangles a frame doesn't stress this card at all. If you want more polygons out of Q3, you can do:
 
-In the process of chasing down the static memory hogs, I finally got around to starting something I have needed to do for years: learn perl.
+r_lodBias -2 // don't use lower detail models 
+r_subdivisions 1 // lots more triangles in curves 
+r_lodCurveError 10000 // don't drop curve rows for a long time
 
-I was scanning through a linker map file looking for large gaps in addresses, thinking to myself "this is one of those things you can probably do in three lines of perl code". I have many and varied excuses for why I have never gotten around to it before, mostly involving the fact that I have C parsing code that lets me get what I need done with only minimal headache when I do force myself to do some text file grovelling.
+I haven't looked at the stencil shadow stuff in a long time, but it gives the largest increase in triangle use (and a lot of fill rate as well):
 
-I decided my excuses weren't good anymore, and went out to the bookstore and grabbed the llama book. Many of you would have been amused seeing me go through the
+cg_shadows 2 // turn on stencil shadows (if you have a stencil buffer)
 
-print "Hello, $name!"
 
-tutorial code as I did the examples in the first couple chapters. :-)
 
-I got my task done, so now I just need to force myself to write little perl programs whenever a need comes up, until I get fluent with it.
+Apple's new G4 systems.
 
-* save 2.5 megs by reworking shader allocation
-* save 1 meg by not double buffering backend if not smp
-* convert all tr. arrays into pointers
-* don't allocate as many snapshotentities when non dedicated
-* new shader option: deformvertex move
-* stackable deformvertex
-* reduced lightning damage by 10%
-* light emit from two sided surfaces
-* reduced starting machinegun ammo in teamplay to 50 from 100
+The initial systems are just G4 processors in basically the same systems as the current G3. There will be some speedup in the normal C code from the faster floating point unit, and the Apple OpenGL has AltiVec optimizations, so framerates will improve somewhat. The limiting factor is going to be the fill rate on the rage128 and the bandwidth of the 66mhz pci bus and processor to main memory writes.
+
+The later G4 systems with the new memory controller and AGP will have better performance, but probably still limited by the new 3D card.
+
+After Apple gets all their driver tuning done, it will be interesting to try running timedemos at low resolution to factor the fill rate out. Apple has a shot at having the best non-geometry accelerated throughput, but it will still be tough to overcome a K7 with an extra hundred or so mhz.
+
+On a purely technical note, AltiVec is more flexible for computation than intel or AMD's extensions (trinary ops), but intel style write combining is better for filling command buffers than the G4's memory streaming operations.
