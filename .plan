@@ -1,31 +1,29 @@
-* fixed undead demon bug
-* new main menu
-* everything splashes on entering water
-* bounded ammo on weapon pickup
-* added cell models and stats
-* Cash's screenshot error check
-* Cash's Host_EndGame
-* Cash's net packetsize bump
-* disc icon during IO
-* monster jump triggers
-* cache optimizations in edge refresh
+* wizard death frames
+* dog leaping
+* make key doors touches
+* increased air time by two seconds
+* new keyboard pitch aiming aids
+* crucified zombies
+* cemter printing
 
-+ cycle new allocation numbers
-+ make qcc do pack files to a destination
-+ dog leaping
-+ wizard death frames
-+ death popping
-+ step up wall clipping
-+ crucified zombie
-+ nudge weapons with sized down screens
-+ 64 bit clean qcc
++ tally monster deaths at end instead of counting at kills (monster on
+monster)
++ parse \n out of messages
++ status bar feedback
++ klook
 
-remove drop to floor?
-make Quit go back to demos and reset controls for E3
-lots of demos
-slime damage for all monsters
-pass PVS list to refresh instead of passing efrags
-remap stupid entities (item_weapon)
-sound for all monsters hitting ground
-reset the bonus items in monsters
-refix the rocket stuff after demo
+weapon dropping
+weapon jumping
+mess with configuration screen
+move all messages into a language qc file
+fix frag bar
+some side velocity on death
+check monster full turn before firing
+check exit hang on beta machine
+puff+light for spike shooters
+tim5 armor fall on ogre bug
+view track killer
+enforcer bolts
+less monster alertness when high or low
+blob spawn ceiling
+fix coop
