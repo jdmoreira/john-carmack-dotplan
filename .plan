@@ -1,9 +1,21 @@
-* debuggraph on top
-* better bobtime / bobcycle
-* face seperation overrun bug
-* fast surface dialog
-* show detail on camera title
+* fixed off-by-one cluster count
+* fixed surf/content bit mismatch
+* gun bob cycles
+* falling pitch change
 
-+ link commands for playing from the cd
+- make a fat pvs for rendering?
++ trace needs to return contents
++ fix BUTTON_ANY
++ rendering beams
++ delta lightstyle controls from server
++ finish animation cycling
 
-qe4: view menu checkboxes are wrong
+QE4: deleting brushes doesn't count as modified?
+initial time on spawn Tent
+underwater caustics
+make all bobbing effects cvars
+title on inspector is broken for textures
+moveable alpha surfaces
+don't forget to set SURF_NOSUBDIV on warps and sky!
+freeze map just sets a HUD of the victory screen
+server scoreboard
