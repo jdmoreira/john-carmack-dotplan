@@ -1,15 +1,35 @@
-* larger bsp token length
+* pitch snap clamping
+* clamp at 89
+* kill sounds when loading plaque
+* no fov or null pic problem during prep refresh
+* wounded faces
 
-goal sound, secret sound, help sound
-remove pushmatrix/popmatrix
-less shademodels
-sound mixaheads
-flies should be a sound field
-trinity: two pass texture checking to avoid thrashing?
-lose links and $ macro expansio?
-lose Com_SetServerState
-blinking flags on huds (blink F1)
-!!! rotating object view changes not in yaw !!!
-save configstrings in level to get lightstyles
-better armor feedback
-armor sounnd?
+die then bring down console over menu bug
+death
+windows key
+make sprite files text format?
+all explodables and breakables should be pre-broken in dm
+flash stats on change?
+send email to j sturges
+inventory names
+super tank skin
+variable delay on centerprint
+timedemo
+demo tests
+flies as entity sound
+release mouse when paused?
+centerview
+peak to peak view bobbing
+counter items
+infantry skins
+
+menu sounds
+secret sound
+goal sound
+
+sound when low on health?
+respawn muzzle flash event still wrong
+falling damage
+rotating sky in software
+color 0 on NT
+transparent water insides
