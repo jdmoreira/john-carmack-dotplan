@@ -1,5 +1,4 @@
-+ upper health bound 
-+ keyboard freelook 
-+ more air acceleration
+*	increased air acceleration
 
-can a hostile monster hit it's movetarget and turn away? check scirk and smotte don't cache player model in single player "fair" mode with syncronous clients kill timers on all spawned objects
++ don't allow up/down move at all without noclip
++ weird fall out of level in sbad
