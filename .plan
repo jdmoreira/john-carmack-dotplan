@@ -1,5 +1,5 @@
-We now have someone officially in charge of quake/quakeworld unix ports:
+A preliminary release of glquake and the 3dfx driver has been put on our ftp site in the idstuff/unsup directory.
 
-Dave 'Zoid' Kirsch. (zoid@threewave.com)
+one hour later...
 
-Direct any correspondance about the linux ports of quake to him.  If any other unix vendors would like to have quake ported to their environments, set up an equipment loan with him.   This is a volenteer position, so don't give him a hard time.
+3dfx gave me a new vxd for glquake that fixes crashing problems on some pentium pro systems.  glquake1.zip now contains the current files. 
