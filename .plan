@@ -1,18 +1,15 @@
-*	added case insensitive key names
-*	skipped license check on dedicated servers
-*	changed prog score sorting some
-*	took out autofire
-*	fixed negative frags
-*	cleaned up connection management
-*	fixed hunk_alloc
-*	no sutch alias frame problem when leaving server
-*	"map test1" on system with enough memory
-*	flickering side crap when level restarting 
-*	added base directory to path
-*	changed heads to tosstop
+*	emit bsp files
 
-****** RELEASE QTEST1 ******
++ idle loop on disconnect
++ key sticking
++ fix noclip in the water
++ modelgen scale option
++ run a single level for a long time, then connect hangs
++ grenade radius check
 
-+ unupdated Z problem is still in there
-+ flickering weapon icon
-+ blood trail to respawn
+gibs stuck in walls in low G
+flash blinding
+turbulent texture direction
+space in smiley talk message
+talk sounds
+full chat mode
