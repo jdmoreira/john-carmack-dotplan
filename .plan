@@ -1,30 +1,13 @@
-* wrote cl_shownet 2 dump
-* rebuilt qcc to take $scale parm
-* worked on demon
-* cleaned up obsolete utilites
-* fixed super shotgun size for sbad
-* moved wadfile to hunk
-* added colormap grab to qlumpy and got rid of vid_256.h
-* finaly gave dec quote
-* spread monster thinking times
+* fixed static object update bomb
+* fixed crazy speed guys
+* allow restart after objerror
+* fixed bug with restarting droped out of world messages
+* spread standing frames more for groups
 
-+ fix angle on spike shooters
-+ pick up super nailgun == illegible server message?
-+ damaging trains
-+ sandy: sally, don't put all the weapons on it, and help the PVS at start
-+ get rid of surface->drawnframe now?
++ remove precache_item
++ ogres that won't wake up
++ spawn flags
 
-fix weapon switching
-fix sound mixing
-climb out of water
-weapon pickup can overmax ammo
-staticly define sound arrays
-lightning client entity
-fly move to goal
-checkbox
-stop repeat jump
-check DAMAGE_YES on dead bodies
-func_oscilating
-teleport warp
-is  surface->texmultab[MIPLEVELS] worth the space?
-combine surface->texture and ofs into texinfo?
+pause turn speed
+army guys don't wake up by touch?
+jump velocity shouldn't make head bob
