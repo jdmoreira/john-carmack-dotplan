@@ -1,23 +1,10 @@
-* cls.fixedimage support
-* no frame before cinematic fix
-* menu during cinematic fix
+* qe4 project dialog fix
+* intermission spots and movement
+* hud transfer framework
 
-+ ingame cinematic state
-+ indemo cinematic state
-- move fraglogfile into game dll
-+ layout language beyond simple centerprint
-+ killserver needs to kill demos as well
-+ must kill cinematic after menu, or restart palette
-+ disconnected can be either at a console or running the demo + intro cinematic
-needs to be part of the game
++ micro levels that just play cinematics?
++ BUTTON_ANY option
 
-force nolerp lag?
-put ip filtering in game dll
-handle localmodels explicitly, rather than as *num
-don't send heartbeats if not running a network game?
-move viewmodel for all accelerations, including jumping and landing
-fade out centerprints
-design quit screen to allow addons to get credits
-be consistant with window title bars
-mp3 audio
-qe4: downsample option, nomipmap option
+remove oldorigin
+use static arrays for map elements in renderers?
+unit level statistics
