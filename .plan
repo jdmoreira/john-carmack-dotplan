@@ -1,29 +1,25 @@
-* wizard death frames
-* dog leaping
-* make key doors touches
-* increased air time by two seconds
-* new keyboard pitch aiming aids
-* crucified zombies
-* cemter printing
+* catch overbackoff in movement sliding code
+* extended key/value size in utils
+* added flame alias model
+* \n in epair text
+* fixed slope by wall false step in movement code
+* hacked around sticky corner problem
+* weapon/item flashing on inventory bar
+* fixed soundinfo exploded on a no sound card system
+* optimized snd paint and transfer
 
-+ tally monster deaths at end instead of counting at kills (monster on
-monster)
-+ parse \n out of messages
-+ status bar feedback
-+ klook
++ change weapon
++ jrstart: no fall in water by medium
++ demo loops
++ player stats on frag bar
++ nail gun alternating
++ cycle edict allocations
++ jrstart: light up black corners
++ clear center print when console drops
 
-weapon dropping
-weapon jumping
-mess with configuration screen
-move all messages into a language qc file
-fix frag bar
-some side velocity on death
-check monster full turn before firing
-check exit hang on beta machine
-puff+light for spike shooters
-tim5 armor fall on ogre bug
-view track killer
-enforcer bolts
-less monster alertness when high or low
-blob spawn ceiling
-fix coop
+axe view tilt
+better underwater bubble control
+track killer
+kick monsters off edges in pain/death
+jump landing frames
+new explosions
