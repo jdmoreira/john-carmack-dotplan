@@ -1,15 +1,11 @@
-*	emit bsp files
+*	ogre sounds
+*	made 180 turns go left for better ogre dragging
+*	error checked and extended qbsp
 
-+ idle loop on disconnect
-+ key sticking
-+ fix noclip in the water
-+ modelgen scale option
-+ run a single level for a long time, then connect hangs
-+ grenade radius check
++ drop green slime percentage
++ ram chip overlapps turtle
++ do DEC quote
++ nolerp update
 
-gibs stuck in walls in low G
-flash blinding
-turbulent texture direction
-space in smiley talk message
-talk sounds
-full chat mode
+caps-lock = full speed
+no particle effects on sky
