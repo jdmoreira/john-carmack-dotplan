@@ -1,28 +1,30 @@
-* fixed world/entity clear allsolid flag bug
-* tracked down problem with zombies popping out of graves
-* fixed path follow when in combat mode bug
-* fixed standing on top of monster stuck bug
-* animating textures
+* added hell knight
+* Hunk_ReportSurfaceCache() instead of automatic
+* fixed multiple touch on items riding plats
+* helped non-solid and trigger items push better
+* cleared pause on map restart
+* fixed level change parms
+* dynamic lights!
+* special wide box for missiles against monsters
 
-+ don't report surface cache size when caching sounds
-+ pick up items multiple times when on dropping plat
-+ pause continues across restarts, but plaque doesn't
-+ overnight lockups
-+ debounce jump
-+ wizard spikes start in walls
++ larger rocket radius
++ slow motion screwups
++ nailgun stops rotating when riding a plat
++ stuck roll angle
 
-overbright light palettes?
-slope auto pitch needs work
-secret area counters
-don't slide on slopes
-zombies need to be gibed by pushers
-monsters trigger plats
-trigger_notouch
-warnings on coplanar brushes in bsp?
-only disable auto center when head is under water, not feet
-debounce escape
-lightstyles in savegames
-sticky bsp corners
-wizard partical centers
-make triggers use BSP models?
-better sky management
+use knight kneeling frames
+zombie crucified frames
+looping sound while invisible
+make running direction changes smoother
+error check all file opens?
+load temp file on stack if possible?
+remove SOLID_SLIDEBOX
+put auto aiming back in?
+move rule checking to end of frame
+quicksave / quickload
+dissallow spawn parms on deathmatch
+make connect to server send version number
+make temp entities auto remove
+no body que?
+water up swim speed
+tim was getting stuck in deathmatch
