@@ -1,51 +1,39 @@
-* changed grenade cores to MOVETYPE_NONE
-* set gravity in worldspawn
-* fixed host_framerate
-* stopped sounds before server shutdown
-* clear all controls on first client frame
-* view.map, viewmodel, viewframe, viewprev, viewnaext commands
-* dropped ogre backpack to 2 grenades
-* fail soft on video mode memory allocation
-* checked console resize in vid mode set, so size messages never get lost
-* shootable buttons
+* reduced rocket refire rate
+* removed ogre wait after awake
+* added shambler pain finished time
+* new caching code
 
-+ edge light seams
-+ increase max packet size during development?
-+ rotate dogs slower?
-+ monsters drop to floor after teleport
-+ need very obvious sound for sequence completion
-+ model viewer inside quake
-+ cache alias models, if only to help level to level change speeds
-+ cache heap compaction
-+ remove bsp->leaktest from QuakeEd
-+ dog leaping
-+ sight sound on monster use
-+ allways switch to picked up weapons
-+ blink weapon icons on status bar when picked up
-+ climb out of water bug
-+ water warp option in all vid modes
-+ make qcc 64 bit clean by using doubles instead of floats on 64 bit
-archs?
++ staircase rail on tim6 needs to be taller
++ normal server disconnect is reported as a host_error
++ jrbase1 up arrow out of slime is near a step
++ bad changeup to green armor from yellow? level transition?
++ are demo playback speeds correct?
++ stair walking underwater
++ ogre explosions need cores
++ teleporting monsters left a statues
++ shootable buttons don't anger monters properly
++ cycle weapon command
++ pain channel is same as weapon channel
+- cut swimming speed some
+- go through more get up frames on zombie before failing
++ got stuck in a dropping zombie
++ wizads on paths drop to ground
++ torch models
++ remove keys on use
+- different keys on status bar for different levels
++ all items in inventory need to blink on pickup
++ soldiers seeing into water on tim6?
 
-intermission levels
-spritegen has funny pathname determination
-demo fast forward
-seperate impact from damage
-combine some of the state flags in both client_t and server_t
-ambient light option on bmodels
-palette should be reset whenever console goes full creen
-should all +- binding have the keyname prepended to avoid the multiple
-downs?
-seperate mouse scaling for turning and moving
-make a "soundshot" option fortesting soundcode in ansi spec makefile?
-raise / lower weapons
-change weapon after firing last round
-flying fish
-change entity flags to effects
-should host_error try to cleanup aborted servers and clients?
-how many hunk allocs are there?  save memory by combining?
-QuakeEd: filter based on skill levels
-check trigger firing when spawned inside one
-remove input line completely when not accepting input
-data checksums for remote servers
-shrink net packet sizes
+savegames cause enemy items...
+different color console fonts
+monsters need to hear from farther away
+think about patch / update plan
+precache_ambient
+alternate surface warp
+killing ogre while on falling platform left him in the air
+better treading water
+better search path handling
+make a progs / models test directory for kevin
+blink key icons on doors
+default.cfg allways goes to knwon state
+animate key icon on doors when failing to open
