@@ -1,19 +1,18 @@
-* level to level transitions
-* finished light modifications for switchables
-* fixed bug that caused some entities to not appear
+* fixed soundlist
+* explosion through walls doesn't damage
+* monsters don't melee through walls
+* fixed memory trash from restarts
+* changed signon messages to more client requests, removed buffers
+* invisible clip solids
 
-+ weird field trashing bug
-+ don't clear sound precache on non-progrestart
-+ stuff not showing up in jccode
-+ savegames
-+ nail angles are wrong
-+ cought on buttons in johnc99
-+ is anything confused by sv.active on clients during a net game?
++ wake up monsters through walls
++ is vid palette setting fixed?
++ remove up/down movement from non-noclip 
++ entity bsp clipping for shots and monster moves
++ make QuakeEd center on start position
++ climb out of water
++ light switches?
 
-stereo positioning is wrong
-nograv
-handle coop games
-make lightning a tent
-worry about security risks with pathnames for demos and savegames
-need to save lightstyles in savegames
-non-convex bsp output
+bsp sticking point
+no aim key
+don't include trigger and clip mip textures in files?
