@@ -1,31 +1,25 @@
-I have been getting a lot of requests for commentary on two subjects lately:
+It looks like we are going to go to a skeletal model system. Jim Dose of Ritual had already started on an exporter from character studio, so we decided to just meet in the middle.
 
-Nvidia's new geometry accelerated card with the funny name.
+I implemented the loading and rendering support this weekend and tested it with a couple hand-inserted bones, so now we just need to write the glue between character studio and the new .md4 format.
 
-It is fast. Very, very fast. It has the highest fill rate of any card we have ever tested, has improved image quality over TNT2, and it gives timedemo scores 40% faster than the next closest score with extremely raw beta drivers.
+The new format is bone based, but it is NOT hierarchial. Each vertex just has an arbitrary weighted list of the bones that influence it. Bones are just 4x3 matricies of floats.
 
-The throughput will definately improve even more as their drivers mature.
+A hierarchial skeleton has some advantages (angles instead of matricies, ability to do IK, etc), but this is a direct and simple replacement for our existing infrastructure that doesn't require any cached state per model instance.
 
-For max framerates in OpenGL games, this card is going to be very hard to beat.
+A single .md4 file holds multiple level of detail surface sets, which all share the same bone frames.
 
-Q3's target of about 10,000 triangles a frame doesn't stress this card at all. If you want more polygons out of Q3, you can do:
+In use, it is exactly like the existing models (interpolate between two frame numbers), it just saves a huge amount of space.
 
-r_lodBias -2 // don't use lower detail models 
-r_subdivisions 1 // lots more triangles in curves 
-r_lodCurveError 10000 // don't drop curve rows for a long time
+I used perl to generate my test data, and it was definately faster than having a separate msdev open and doing it in C.
 
-I haven't looked at the stencil shadow stuff in a long time, but it gives the largest increase in triangle use (and a lot of fill rate as well):
+I am trying to use parenthesis on all perl functions, but when I type "print", my fingers seem to have a flashback to applesoft basic fifteen years ago, and I wind up with bare quotes on prints and parens on everything else...
 
-cg_shadows 2 // turn on stencil shadows (if you have a stencil buffer)
+Does anyone know if there is an existing msdev syntax coloring file for perl? (no, I don't want to switch to a different editor!)
 
 
-
-Apple's new G4 systems.
-
-The initial systems are just G4 processors in basically the same systems as the current G3. There will be some speedup in the normal C code from the faster floating point unit, and the Apple OpenGL has AltiVec optimizations, so framerates will improve somewhat. The limiting factor is going to be the fill rate on the rage128 and the bandwidth of the 66mhz pci bus and processor to main memory writes.
-
-The later G4 systems with the new memory controller and AGP will have better performance, but probably still limited by the new 3D card.
-
-After Apple gets all their driver tuning done, it will be interesting to try running timedemos at low resolution to factor the fill rate out. Apple has a shot at having the best non-geometry accelerated throughput, but it will still be tough to overcome a K7 with an extra hundred or so mhz.
-
-On a purely technical note, AltiVec is more flexible for computation than intel or AMD's extensions (trinary ops), but intel style write combining is better for filling command buffers than the G4's memory streaming operations.
+* md4 model loading and displaying
+* removed clip models from cgame, use renderer models instead
+* fixed mover pushing again
+* fixed bug with culling of mirrors made of multiple faces
+* fixed quad on spinning machinegun
+* surfaceparm alphashadow - This causes q3map -light to check individual texture pixels on transparant surfaces for light shadowing instead of making the entire surface either cast or not cast shadows
