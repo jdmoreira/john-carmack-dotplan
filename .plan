@@ -1,26 +1,18 @@
-*	fixed sound origins again
-*	fixed crushing stuff
-*	added "wait" to triggers
-*	added startup stuff for demo
-*	swimming direction stuff
-*	added '+' sizeup as well as =
-*	changed "unnamed" to "player"
-*	fixed skinnum clearing
+*	added case insensitive key names
+*	skipped license check on dedicated servers
+*	changed prog score sorting some
+*	took out autofire
+*	fixed negative frags
+*	cleaned up connection management
+*	fixed hunk_alloc
+*	no sutch alias frame problem when leaving server
+*	"map test1" on system with enough memory
+*	flickering side crap when level restarting 
+*	added base directory to path
+*	changed heads to tosstop
 
-+ gibbs need to fall after trap doored
-+ ambient
-+ make bubble sound while swimming forward
-+ server speed
-+ case insensitive on key names
-+ hunk alloc
-+ nans
-+ better notify scrolling
-+ final score dumping
-+ negative frags
-+ reconnect problems
+****** RELEASE QTEST1 ******
 
-backpack dropping underlava
-"hostname" makes gane think it is a server
-swimming models
-weapon cycling
-dedicated server stuffcmds
++ unupdated Z problem is still in there
++ flickering weapon icon
++ blood trail to respawn
