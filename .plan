@@ -1,30 +1,50 @@
-* boss damage only by lightning
-* enforcer bolt positioning
-* all gibs centered
-* lava splash
-* boss stop throwing when player is dead
-* fixed cl_backspeed for always run checkbox
-* fixed double talk sound on triggers
-* retain options menu cursor pos
-* nightmare mode: no attack_finished limits, and five second pain interval
-* triggered door message bug
-* weeded out the unused entities in misc
-* consolidated the four remaining sprite scripts into a single file
-* modified sprgen to allow multiple grabs in a single file
-* grabbed new explosions
+* more velocity on level 1 gib
+* no pain sounds when invincible
+* reduced lava coor shift
+* deterministically spawn items on bmodels
+* objects on blocked train no longer fall through
+* hell knights need muzzle flash
+* fixed flame offsets
+* three levels of screen update
+* erase exact lines of centerprint
+* shareware non-finale transitions
+* crash in _SV_TouchLinks
+* escape puts away console
+* laodgame from demo
+* backpacks in coop
+* floating gibs
+* made beta3 CDs
 
-+ level 1 gib needs work
-+ is clipping detection for asm sound mixing working right?
-+ items falling through other items bug
-+ item on moving object respawn bug
-+ models aren't checking dlight decay time
-+ fix drop.map
-+ status active/max is reversed
-
-coop against boss
-make qlumpy parse qc files as source?
-combine particals and temp entities
-fix gib rules
-slime burn down
-check edict return type
-flash weapon icons
+"restart" in coop game drops to dos
+word wrapping needs to count extra notify lines
+telefrag isn't working sometimes
+put a save plaque up when game is saving
+demon died on top of player, left in air when moved
+door sounds are broken
+registered message shouldn't print at all
+menu hotkeys should return to game on escape, not main menu
+quickload shouldn't drop to console
+quit/end game confirmation
+split door is playing talk wav
+sound looping pop
+weapon frames should be decoupled from pain frames
+door touch
+take the k_ out of configs
+velocity between levels
+fish
+shub
+display key bindings command
+deathmatch intermission
+door messages
+zombie statues
+constant look down pitch bug is multi player related
+permanent head tilt in coop mode
+endscreen
+connect while in demo is a bug
+secret counts aren't broadcast
+half dead player
+frozen demon when dropped on player head
+swimming frames
+map e1m1 from a coop game gives loop qsocket used
+all player model axe frames
+sw version shouldn't allow path changes unless pop
