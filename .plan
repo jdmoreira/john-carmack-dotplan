@@ -1,9 +1,22 @@
-* fixed qe4 texturepath bug
-* qe4: show in use textures even when showing a wad
-* utils: fixed gamedir to allow nested quake2 directories
-* moved env out of gfx, so gfx is all source files
+* finished code dump
+* dedicated server
+* removed all dash parms
+* texture paging research
 
-malloc tags for game and level
-clone detail brushes should remove detail flag
-make timedemo a server connect thing
-ktest.reg bad model
++ examine ambient sounds
++ key clear events doesn't clear everything
+
+sound streaming
+bsp hint brushes (SURF_NODRAW?)
+autoexec.cfg
+ip cvar for multihomed servers
+ip userinfo for clients
+report dash parms on cmd line?
+menu on top of cinematic leaves crap
+color 0 is still broken on NT
+
+allow clients to connect to the server even if it is not
+running a level?
+local client is allways connected
+clients are only kicked when the entire server is shut down
+or they connect to a remote server
