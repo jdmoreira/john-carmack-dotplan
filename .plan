@@ -1,35 +1,19 @@
-*	frag bar
-*	start profile on late frame
-*	fixed relinking bug
-*	improved prediction bounding
-*	change weapon chooses supers first
-*	ammo pictures on status bar
-*	drop pain flash again and bound
-*	tweak armor and spike damages
+*	fix incorrectly updated origin bug
+*	added alias backpack and armor
+*	fixed weapons sticking into wall
+*	changed "connected to server" to "connected to map"
+*	fixed console
+*	armor skin numbers
+*	fixed "not shooting" bug
+*	changed sound back to origin based instead of entity based
 
-+ don't pick up equal armor
-+ ceiling doors don't cause damage
-+ demons crash when jumping
-+ monsters need to use bsp clipping
-+ need to save memory...
-+ Fatal error: NaN impact time from entity
-+ change armor damage
-+ drop weapons
-+ face to face with nailgun does no damage
-+ +pointfile from cmdline doesn't work
-+ conglomerate hunk printing
-+ shoot triggers
-+ missing a Z update on rockets sometimes?
-+ firing after net games
-+ negative scores on frag bar and frag board
-+ world backpack and armor model
-+ weapon bounce down
-+ center look key
-+ check change levels in high res mode
++ swimming directions
++ quit scores are wrong
++ screen flicker crap
++ radius damage sight check
++ crushing issues
++ bodies stopping in midair 
 
-show ammo counts in single player frag screen
-radius damage should open secret doors
-five point font on kills
-rocket poke into walls
-shoot open connected doors
-gib bounce sound
+dimmed out weapons
+follow killer
+spin head inside gib
