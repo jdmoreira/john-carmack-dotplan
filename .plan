@@ -1,9 +1,5 @@
-*	expand qbsp to 32 bit values for edges and faces. sigh.
-*	fixed key sticking problem
++ upper health bound 
++ keyboard freelook 
++ more air acceleration
 
-seperate mouse sscaling values to allow negative up/down reversal
-frag bar shows first two digits, not last two when >= 100
-randomize head direction
-slime less damage
-drop to knees when crunched
-check deathmatch flags before precaching
+can a hostile monster hit it's movetarget and turn away? check scirk and smotte don't cache player model in single player "fair" mode with syncronous clients kill timers on all spawned objects
