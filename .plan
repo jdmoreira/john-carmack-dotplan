@@ -1,14 +1,17 @@
-* basic joystick controls, some work still needed for advanced controlers
-* r_dlightBacksides 0 option
-* forced cvar_restart when version changes
-* fixed some flare-in-fog problems
-* fixed skin color in menus
-* print obituary message even when you are the killer, so all kills get an entry in the logfile
-* fixed bugs in line token parsing when quotes or commands aren't white space separated
-* multiprocessor acceleration "r_smp 1"
-* increase menu dimming
-* increased rocket damage radius from 120 to 150 units
-* check for running server in all server commands (dumpuser, etc)
-* new cvar cheat setup -- by default, only archived variables can be changed when not cheating
-* "cg_drawstatus 0" only removes status bar
-* "cg_draw2d 0" removes all 2d
+* enable scissor test properly
+* archive r_lodBias
+* cg_draw3dIcons 0 option
+* data cheating protection
+* userinfo renamed to clientinfo, added state and current server address
+* don't forward commands to a server when playing demos
+* fixed NULL extension on dir command
+* added one more shotgun pellet
+* added CG_Shutdown for cgame cleanup
+* fixed jitter in rising smoke
+* increase minimum time before reusing an entity slot
+* soundinfo reports current background streaming file
+* changed IPX separator to . from :, moved port processing to system independant code
+* auto port scan wasn't updating the net_port cvar
+* attack button presses reset inactivity timer now
+* increased the forced respawn time from 10 to 20 seconds
+* show smp on gfxinfo, slight reformat
