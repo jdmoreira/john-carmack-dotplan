@@ -1,18 +1,15 @@
-* timedemo attract flag bug
-* multiple model entities
-* 8/16 bit updates
-* merged delta with baseline
+* fixed time clamping issue
+* removed win32isms from snd_mix.c and snd_dma.c
+* optimized dsound locks
 
-+ destroy windows on each ref start
-+ server time clamping issues
-+ client light level different between refs
-+ remove version command
-+ animating textures
-+ run from cd option
-+ toast mergedemos
++ scale texture stats by texture size
++ not autodetecting PII for mono lightmaps?
++ put swaps from ref into qshared?
++ walk backwards when looking straight up?
 
-flags not used in entity-state?
-airborne frames for everything?
-don't send player entity to owner in most cases
-client quit dropping prints extra messages?
-trinity: track and field style extra fast running?
+seperate #define for asm code?
+swim up with jump key
+window close box
+reload textures only on context recreation
+do a stereo gl implementation on intergraph?
+item using...
