@@ -1,14 +1,10 @@
-* fixed crash when -NXHost on quake
-* added +precache 0 option to speed up WAN loading
-* fixed sound loading bug
-* added loop lengths to sound loading
-* increased MAX_MAP_ENTSTING
+* made no-light levels auto fullbright
+* finished second clipping hull
 
-+ quakeEd filter brushes
-+ 16 bit looping sounds hang the dos game
++ zombies on the ground can't be gibbed
++ listen servers not working?
 
-QuakeEd showed "Helvetica-Bold" in entity comment field.  Scary.
-maake treading water better
-trigger to turn off spikeshooters
-save the entity string memory
-blocked bmodels are conveyors?
+error check all strcpy in QuakeEd
+slow slide clipping with ogre hull?
+grenades should trigger shootable triggers / objects
+looping sound that didn't stop
