@@ -1,15 +1,18 @@
-* fixed time clamping issue
-* removed win32isms from snd_mix.c and snd_dma.c
-* optimized dsound locks
+* freed textures on gl shutdown
+* fixed pitch bounds check merge bug
+* cleanup sound code
+* cut default maxclients
+* cut update_backup
 
-+ scale texture stats by texture size
-+ not autodetecting PII for mono lightmaps?
-+ put swaps from ref into qshared?
-+ walk backwards when looking straight up?
++ soft fullscreen failure on ingr
++ error not closing window
++ cds window set on top of taskbar
++ fullscreen in mode 0, set mode 1 = crash
++ alt stuck down after alt-tab
 
-seperate #define for asm code?
-swim up with jump key
-window close box
-reload textures only on context recreation
-do a stereo gl implementation on intergraph?
-item using...
+fix vis expansion problem
+trinity: shimmering heat atmospheric effects
+need a remove command builtin for game logic
+get all texture extension numbers into gl_image
+vis decompression overrun
+window doesn't offset in non-fullscreen modes
