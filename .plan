@@ -1,57 +1,28 @@
-We got the new processors running in our big compute server today.
+This little note was issued to a lot of magazines by microsoft recently. Just for the record, they have NOT contacted us about any meetings.
 
-We are now running 16 180mhz r10000 processors in an origin2000. Six months ago, that would have been on the list of the top 500 supercomputing systems in the world. I bet they weren't expecting many game companies. :)
+All the various dramas in this skit haven't quite settled down, but it looks like microsoft is going to consciously do The Wrong Thing, because of politcal issues. Sigh.
 
-Some comparative timings (in seconds):
+Our goal was to get the NT OpenGL MCD driver model released for win-95, so IHVs could easily make robust, high performance, fully compliant OpenGL implementations. Microsoft has squashed that. Flushed their own (good) work down the toilet.
 
-[code]
-mips = 180 mhz R10000, 1meg secondary cache
-intel = 200 mhz ppro, 512k secondary cache
-alpha = 433 mhz 21164a, 2meg secondary cache
+The two remaining options are to have vendors create full ICD opengl implementations, or game specific mini-drivers.
 
-qvis3 on cashspace:
+Full ICD drivers are provided by intergraph, 3dlabs, real3d, and others, and can run on both NT and 95 (with code changes). Microsoft still supports this, and any vendor can create one, but it is a lot of work to get the provided ICD code up to par, and bug prone. On the plus side, non-game tools like level editors can take full advantage of them.
 
-cpus    mips    intel   alpha
-----    ----    ----    ----
-   1     608     905     470
-   2     309     459
-   3     208     308
-   4     158     233
-   8      81
-  12      57
-  16      43
-[/code]
+Minidrivers certainly work fine - we have functional ones for 3dfx and powerVR, and they have the possibility of providing slightly better performance than fully compliant drivers, but partial implementations are going to cause problems in the future.
 
-(14 to 1 scalability on 16 cpus, and that's including the IO!)
+We will see some of both types of drivers over the next year, and Quake 2 should work fine with either. We also intend to have Quake 2 show up on several unix systems that supports OpenGL, and I still hope that rhapsody will include OpenGL support (we'll probably port a mini-drivers if we can't get real support).
 
-The timings vary somewhat on other tools - qrad3 stresses the main memory a lot harder, and the intel system doesn't scale as well, but I have found these times to be fairly representative. Alpha is almost twice as fast as intel, and mips is in between.
+Once again, we won't be idiotic and crusade off a cliff, but we don't have to blindly follow microsoft every time they make a bad call.
 
-None of these processors are absolutely top of the line - you can get 195 mhz r10k with 4meg L2, 300 mhz PII, and 600 mhz 21164a. Because my codes are highly scalable, we were better off buing more processors at a lower price, rather than the absolute fastest available.
+Subject: Microsoft D3D vs. OpenGL
+Author: Julie Whitehead at Internet
+Date: 6/23/97 10:01 AM
 
-Some comments on the cost of speed:
+Dear Editor,
+You may be aware of a press release that was issued On June 12, by Chris Hecker, former MS employee and developer of D3D [sic]. The statement asks Microsoft to develop a stonger link between D3D and OGL.The press release, was signed by several game developers representing the top tier 3-D game developers. Microsoft is dedicated to maintaining an active relationship with its DirectX developers. In response to this request Microsoft will host the developers included in the statement at a developers roundtable in July. The purpose of the roundtable is to openly consolidate input and feedback from developers. Tentative date for the roundtable is immediately following Meltdown, July 18.
 
-A 4 cpu pentium pro with plenty of memory can be had for around $20k from bargain integrators. Most of our Quake licensees have one of these.
+Direct3D is Microsoft's recommended API for game developers with more than 100 developers using Direct3D as the defacto consumer API. OGL is widely regarded as a professional API designed for high precision applications such as CAD, CAM, etc. Our hope is that this round table will provide Microsoft with the feedback required to evolve our 3D APIs in a way that delivers the best platform for our developers.
 
-For about $60k you can get a 4 cpu, 466 mhz alphaserver 4100. Ion Storm has one of these, and it is twice as fast as a quad intel, and a bit faster than six of our mips processors.
+If you have any questions or wish to speak with a Microsoft spokesperson, please let me know.
 
-That level of performance is where you run into a wall in terms of cost.
-
-To go beyond that with intel processors, you need to go to one of the "enterprise" systems from sequent, data general, ncr, tandem, etc. There are several 8 and 16 processor systems available, and the NUMA systems from sequent and DG theoretically scale to very large numbers of CPUS (32+). The prices are totally fucked. Up to $40k PER CPU! Absolutely stupid.
-
-The only larger alpha systems are the 8200/8400 series from dec, which go up to 12 processors at around $30k per cpu. We almost bought an 8400 over a year ago when there was talk of being able to run NT on it.
-
-Other options are the high end sun servers (but sparc's aren't much faster than intel) and the convex/hp systems (which wasn't shipping when we purchased).
-
-We settled on the SGI origin systems because it ran my codes well, is scalable to very large numbers of processors (128), and the cost was only about $20k per cpu. We can also add Infinite Reality graphics systems if we want to.
-
-Within a couple years, I'm sure that someone will make a plug-in SCI board for intel systems, and you will be able to cobble together NUMA systems for under $10k a cpu, but right now the SGI is the most suitable thing for us.
-
-I have been asked a few times if Quake will ever use multiple processors. You can allways run a dedicated server on one cpu and connect to it to gain some benefit, but that's not very convenient, doesn't help much, and is useless for internet play.
-
-It's waaaay down on the priority list, but I have a cool scheme that would let me make multiple copies of the software rendering dll and frame pipeline the renderers. Response is cut by half and the frame rate would double for two cpus, but pipelining more than a frame would be a bad idea (you would get lag on your own system).
-
-I wouldn't count on it, but some day I might take a break from serious work and hack it in.
-
-There is no convenient way to use multiple processors with the hardware accelerated versions, except to run the server on a seperate cpu.
-
-That will probably be an issue that needs to be addressed in the lifespan of the next generation technology. Eventually people are going to start sticking multiple cpus (or multiple thread issue systems sharing resources) on a single chip, and it will become a consumer level item. I'm looking forward to it.
+Julie Whitehead
