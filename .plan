@@ -1,13 +1,16 @@
-* map_noareas
-* target_speaker
+Developing for windows is not fun. We are having a lot of trouble getting good solid compatability across all the systems we are testing on.
 
-handle bmodel origins on client side, search for good area
-check localsound pos starts
-make the server read the demo configstrings and baselines
-and spit back to the client like normal
-water wading sounds
-sound streaming option
-remove cl_mapentity
-sync camera pain motion to sound length?
-give all sounds a max volume area isntead of instant diminish
-quakeworld style shotgun handling
+When it works right, it just pops right into full screen mode with sound and network just like the dos version, but we are still chasing problems on several systems. Sigh.
+
+* !!! autolooped entity sounds !!!
+
+make all tools into 5.0 projects
+combine SZ_ and MSG_
+allways mkdir gamedir?
+pause dumps packets?
+clear all background all the time flag
+player physics
+MD4 each map file?
+print version number on console bottom
+select a different cd track if all goals accomplished
+get rid of alphalight
