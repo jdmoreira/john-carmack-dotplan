@@ -1,17 +1,12 @@
-* fixed backpack dropping in deathmatch
-* fixed monster sighting PVS problem
+* got new alias stuff sort of working
 
-+ fix dos qcc
-+ demon landing frame
-+ trigger activated train
-+ enforcer
-+ dog
-+ -1 ammo, 1 ammo on super shotgun, etc
-+ invisible brushes for clip hull
-+ grenade launcher shouldn't aim move
++ pause message needs to stay up
++ change level trigger
++ knight bodies are solid
 
-update ammo when picked up grenade launcher with rocket running
-damage value on trains and secret doors
-player stayed on console after leaving
-jctest1 door fuckups
-grenade open secret doors
+lighting hidden objects
+level loading pacifier
+weapon switch button
+doors that stay shut on some multi levels?
+mouse button stuck down
+monster shouldn't get key door messages
