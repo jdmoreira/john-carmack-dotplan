@@ -1,21 +1,58 @@
-Many of the comments about the Quake 2 test are already being addressed. We expected quite a few of them, but the test has served its purpose of bringing in some good feedback that we couldn't have predicted.
+* interpolate prediction error
+* fixed farthest respawn
+* removed backspeed
+* no pickup weapons when dead!
+* multiple crosshair pics
+* fixed dropping items in wall
+* disabled auto weapon switching in deathmatch
+* respawn_time
+* mroe precaches
+* removed doubles
 
-The final game will definately be better as a result of the test.
++ pitch around bug
++ ping calculation
++ are demos broken with prediction?
++ no footsteps if moving slow?
++ kill self command
++ no toss weapons in wall
++ footstep doubletap
++ clear gib flag on respawn
++ faster weapon deop times
 
-However, it certainly won't please everyone. I am confident that the majority will think that Quake 2 is significantly better than anything we have ever done before, but even if we please 80% of our potential customers, that will still leave a couple hundred thousand people thinking that we let them down.
-
-I suppose that I have it the easiest there - I can always defend my technical decisions with specific discussions of my evaluations of the tradeofs that led me to the paths I chose. In fact, in a large number of cases when someone suggests something, I can actually say "Tried it. Didn't work as well."
-
-Defending level design, artwork, or sounds is a lot harder. We can't even always agree here at id on many of these issues, so we know for sure that we can't please all the users simultaniously. All we can do is put talented people on the job and have confidence in their abilities.
-
-Note: Q2TEST DOES NOT INCLUDE ANY HIGH QUALITY SOUNDS! That would have added another 15 megs to the demo size. Selecting high quality sounds just upsamples the existing 11khz / 8 bit sounds. There is a significant quality increase (at a slight speed and memory cost) with the full production sounds.
-
-Quake 2's goal is to be the best first person shooter ever. We are trying to evolve a genre, not move to a different one. If you don't want a game that mostly consists of running around and killing things, you will be dissapointed. We are trying to be cohesive, but not deep. I have high hopes for the games that are atempting to aply our technology to other genres, but don't look for it in Quake 2.
-
-A quick plug:
-
-if you have any interest in programming, you should look at Michael Abrash's Graphics Programming Black Book Special Edition. It has just about everything he has written, from the ancient work on optimizing for the 8086 (still interesting to read) to the articles written during quake's development.
-
-I personally learned a lot from Michael's early articles, and I was proud to contribute to the later ones.
-
-http://www.amazon.com/exec/obidos/ISBN=1576101746/3226-6070174-877180
+precache talk wav
+qbsp: MAX_MAP_AREAS when leaking?
+flies effect on hyperblaster???
+no slide under staircase
+make blaster bolt move faster
+BECOME_FLASH effect?
+make dedicated server sleep
+connect to other server while playing bug
+bit code net messages?
+win95 joining
+changeweapon work better when out of ammo
+pop in maps?
+highlighted numbers
+sort image_t lists?
+switching rules
+brain effect
+monsters source shots before testing line of sight
+secret doors
+obituaries from monsters
+warp gate effect
+teleporter effect
+increase max switched lights
+max lightstyles bug
+shorter wav latency
+beep beep on pc icon
+blood jets from pain skins
+gibs shoot up out of lava
+savegame in water bug
+font outlines not sharp in gl
+weapons vanishing on toss?
+longer pause after death before respawn
+temp invulnerability after respawn?
+telefrag not always working?
+step up in water?
+clear powerups on death
+don't hold a grenade when none left
+l_health item precache?
