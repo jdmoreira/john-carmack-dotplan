@@ -1,23 +1,27 @@
-Drag strip day!
+Things are progressing reasonably well on the Quake 3 engine.
 
-Most of the id guys, John Romero from ION, and George and Alan from 3drealms headed to the Ennis dragstrip today.
+Not being limited to supporting a 320*240 256 color screen is very, very nice, and will make everyone's lives a lot easier.
 
-Nobody broke down, and some good times were posted.
+All of our new source artwork is being done in 24 bit TGA files, but the engine will continue to load .wal files and .pcx files for developer's convenience. Each pcx can have its own palette now though, because it is just converted to 24 bit at load time.
 
-11.9 @ 122 John Carmack F40
-12.2 @ 122 George Broussard custom turbo 911
-12.4 @ 116 Brian Hook Viper GTS
-13.4 @ 106 John Romero custom turbo testarossa
-13.6 @ 106 Todd Hollenshead 'vette
-13.9 @ 100 Paul Steed 911
-14.0 @ 99 Tim Willits 911
-14.3 @ 101 Bear Turbo Supra
-14.4 @ 98 Alan Blum turbo rx-7
-14.7 @ 92 Brandon James M3
-15.3 @ 92 Christian Boxster
-15.5 @ 93 Jen (Hook's Chick) Turbo Volvo
-16.1 @ 89 Ms. Donna Mustang GT
-17.4 @ 82 Anna (Carmack's Chick) Honda Accord
-18.1 @ 75 Jennifer (Jim Molinets' Chick) Saturn
+Q3 is going to have a fixed virtual screen coordinate system, independant of resolution. I tried that back in the original glquake, but the fixed coordinate system was only 320*200, which was excessively low. Q2 went with a dynamic layout at different resolutions, which was a pain, and won't scale to the high resolutions that very fast cards will be capable of running at next year.
 
-We had three significant no-shows for various reasons: my TR, Adrian's viper, and Cash's supercharged M3 were all in the shop.
+All screen drawing is now done assuming the screen is 640*480, and everything is just scaled as you go higher or lower. This makes laying out status bars and HUDs a ton easier, and will let us do a lot cooler looking screens.
+
+There will be an interface to let game dlls draw whatever they want on the screen, precisely where they want it. You can suck up a lot of network bandwidth doing that though, so some care will be needed.
+
+-
+
+Going to the completely opposite end of the hardware spectrum from quake 3..
+
+I have been very pleased with the fallout from the release of the DOOM source code.
+
+At any given spot in design space, there are different paths you can take to move forward. I have usually chosen to try to make a large step to a completely new area, but the temptation is there to just clean up and improve in the same area, continuously polishing the same program.
+
+I am enjoying seeing several groups pouring over DOOM, fixing it up and enhancing it. Cleaning up long standing bugs. Removing internal limitations. Orthogonalizing feature sets. Etc.
+
+The two that I have been following closest are Team TNT's BOOM engine project, which is a clear headed, well engineered improvement on the basic DOOM technical decisions, and Bruce Lewis' glDoom project.
+
+Any quakers feeling nostalgic should browse around:
+
+http://www.doomworld.com/
