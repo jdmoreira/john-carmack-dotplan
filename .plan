@@ -1,14 +1,11 @@
-* graphic for defer
-* don't set any systeminfo vars from demos
-* A3D fix
-* spectator follow clients that disconnect
-* stop follow mode before going to intermission so you can ready
-* use (fullbright) vertex lighting if the bsp file doesn't have lightmaps
-* auto set demo keyword on servers
-* finished cd key authorization
-* fixed symbol table loading for interpreter
-* reconnect command
-* removed limit on number of completed commands
-* changed default name to "UnnamedPlayer"
-* awards over people's heads in multiplayer
-* fixed global powerup announcements
+The demo test is built. It should go up in a couple hours if nothing explodes.
+
+Mac and linux builds won't be out tonight.
+
+* clear SVF_BOT when exiting follow mode
+* render temp memory
+* new mac GL initialization code
+* no zone memory use in music thread
+* added check for trash past zone block
+* explicitly flush journal data file after a write
+* added FS_Flush
