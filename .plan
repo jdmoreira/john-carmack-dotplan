@@ -1,43 +1,31 @@
-* fixed entity numbers 512-1024
-* combined baselines and oldorgs
-* demos working again
-* MAX_SFX bug
+* removed MAX_PACKET_ENTITIES limit
+* used areas for beam culling
+* centerprint to non client not error
+* don't rotate roll when pushed by entities
+* areaportal fragments in software
+* F_CLIENT fix
+* KEY_ANY fix
+* save areaportals
+* save lightstyles
+* fixed secret double counting
+* up as jump
 
-spawn invisible allways starts at 256, so visible get bytes?
-check goal counting
-any key puts away help?
-muzzle flashes
-make cl_entities dynamic?
-removed mergedemo on client
-remove all client demo playback
-finish savegame / loadgame UI
-finish cinematic sound
-check demo fopen spawning for cddir
+color 0 on NT
+water wading speed
+water jump out
 
-weird palette issues?
-more red
-
-minimum health
-infantry muzzle sounds?
-remove blaster hit flashes on flesh
+centerview
 no savegame when dead
-mine2 dissapearing problems
-use key problems
-
-qrad: infinite styles on face
-
-allways have two secrets
-allways select new items
-do demos need a precache command?
-timegraph
-
-!!!save lightstyles in savegame!!!
-!!!save areaportal state in savegame!!!
-
-are loadgames doing 10 second prerun?
-
-move say and say_team into game
-sentity_t gentity_t
-more blood
-
-areaportals in software - bad sort keys?
+mroe damage blend
+putclient in server shouldn't reference weaponmodel
+userinfo issues
+IP cvar for servers
+IP userinfo for clients
+remove sv.viewpos?
+make max_entitites a noset cvar
+don't use PHS?
+up / down issues
+broadcast centerprint
+intermissions
+flickery lights
+free mouse when paused
