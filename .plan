@@ -1,16 +1,32 @@
-* fix 8 bit palette in NS
-* modified modelgen to allow multiple models in one file
-* fixed qbsp to detect cases of no entities placed and skip fill outside
-* new wizard spike attacks
-fix corrected palette at mode change
-make dos utility tree
-make QuakeEd's menu commands variable length
-debounce console
-debounce jump
-remote slist
-slist with user names
-fall out of world when dead
-s_releasesound: s->refcount < 0
-sound cache parameters
-clear pause on restart
-check pak file overriding
+* lowered slime cshift
+* wizard slide move
+* dog frames
+* fixed auto aiming when dead on
+* soldier less hp + tuning
+* various gibs
+* dynamically allocated scores structure
+* trigger_counter
+* door TOGGLE
+* fixed forking bug that trashed pointfiles
+* fixed sky fuckup
+
++ fix demon pop jump
++ zombie get up inside other
++ zombie gib throwing
++ lose onfloor when pushed
++ animating textures
++ schurch weirdness
+
+make light styles global prog vars
+base4 entrance door sucks
+back attack damage
+fix dynamic light values of players
+aim up at nearby monsters
+load pcxs in lbmlib
+text triggers
+swim slow straight up?
+temp entities
+client sound calls
+zombie heads bouncing
+bouncing monsters out of the world
+gib bodies between pushers
