@@ -1,30 +1,28 @@
-* finished new bsp portalization process: 20% faster, 1/5 the memory
-* fixed monster repeat teleport
-* klook and mlook
-* fixed monster stepping up into mid air
-* what breaks switchable lights is a bsp->entities without running light
-* changed network startup to use signon ready flags
-* added extra face-on wall friction
+* fixed world/entity clear allsolid flag bug
+* tracked down problem with zombies popping out of graves
+* fixed path follow when in combat mode bug
+* fixed standing on top of monster stuck bug
+* animating textures
 
-+ fix ammo between levels
-+ dark knight
-+ message wasn't a nop
-+ schurch zombie graves
-+ sandy's bug1
-+ slow drifting spikes
-+ kill wizard spikes after their death
-+ s_refcount bug still exists
-+ wizard spike starters spawn inside walls
-+ plat dmg fields
-+ longer pause for ogre first shot
++ don't report surface cache size when caching sounds
++ pick up items multiple times when on dropping plat
++ pause continues across restarts, but plaque doesn't
++ overnight lockups
++ debounce jump
++ wizard spikes start in walls
 
-should demons step up before leaping?
-shooting spikes out of rockets
-need mouse configuration in the menus
-try removing bounding pad on bmodels
-add fadable light switches
-ability to bind specifically to key up / down ?
-bound ammo on weapon pickup
-lava damage for monsters
-error check add to reliable messages
-less accurate ogre tossing
+overbright light palettes?
+slope auto pitch needs work
+secret area counters
+don't slide on slopes
+zombies need to be gibed by pushers
+monsters trigger plats
+trigger_notouch
+warnings on coplanar brushes in bsp?
+only disable auto center when head is under water, not feet
+debounce escape
+lightstyles in savegames
+sticky bsp corners
+wizard partical centers
+make triggers use BSP models?
+better sky management
