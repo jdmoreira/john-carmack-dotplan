@@ -1,19 +1,17 @@
-* fixed trigger_always
-* game dll by search path
-* cinematic NULL bug
-* help computer
+* QE4: bug with texture attributes on non-visible surfaces
+* stack bug for initial light maps
 
-+ get rid of datablocks?
-+ dll init must clear the persistant data
-- savegame needs to save game.dll name
-+ save directory?
-+ put pcx_t into qfiles.h?
-+ unify all hud work into g_hud.c
++ pink lightmaps?
++ alt-tab should only minimize if full screen
++ version as command and var?
 
-set command with flags?
-should "path" be renamed to pathlist?
-trigger_allways should be fixed size
-gameversion
-somehow don't resend big deltas (scoreboard hud) until ack?
-client side feedback
-glgentextures
+splashing sound when swimming at surface?
+brains make view roll around
+wasted polygons outside maps
+vis decompression overruns?
+INVISIBLE_TO_OWNER INVISIBLE_TO_OTHER
+make * model names visible
+GL_MipMap overwriting?
+trinity: proper biped walking
+increase range of mouse slider
+gun shock based on damage source
