@@ -1,22 +1,20 @@
-*	fixed vanished bmodels at startup
-*	fixed getting stuck problem
-*	fixed the sound out of range problem
-*	hack patched the dissapearing under water
+*	rewrote sound packet communication
+*	fixed multiple pains from a single shotgun
+*	qcc -copy option for sounds and models
+*	fixed up pak file support
+*	removed .rc files
+*	screen size over status bar
 
-+ remove look spring
-+ fix radius damage
-+ too many people on status bar
-+ invis in water
-+ multiple pain sounds started
-+ shift jumps while in console
-+ less blood time
-+ gone armor icon
-+ look up/down keyboard modifier
++ monsters need to be pushed into teleporters
++ blue frag pieces
++ NaN impact time is a crasher
++ looking down on weapon bounces away from bottom
++ timing preventing attacks at startup
 
-clamp velocity on respawn
-clear damage flash on respawn
-bad changeup 
-bob speed kept on restart
-no puffs in sky volumes
-id copyright seal
-teleport screen warp
+fix hardwired vid_uopdate
+remove redundant death sounds
+teleport warp
+torches
+cpuid?
+monsterblock entity
+multiple sky textures in a level
