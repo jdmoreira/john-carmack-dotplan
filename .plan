@@ -1,12 +1,10 @@
-* new trigger code with delay
+* made an execution stack for progs 
+* spawn flags
 
-+ jrbase3 spawn problem
++ fix NaNs!
++ proper level changing
 
-jump triggers
-dragon path
-uncache player on single player
-monster missile checking for race relations
-gib pack
-wizard partical trail
-multiple sky maps
-non-bleeding takedamage
+door no backup option
+PVS for net update
+check entity relinking for excess
+good tempents.
