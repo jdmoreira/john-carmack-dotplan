@@ -1,40 +1,45 @@
-* fixed point / point missile interactions
-* don't change weapons on pickup in deathmatch
-* made vis 30% faster
-* fixed falling in floor
-* fixed and armor plated the jump out of water code
-* fixed jump monkey climbing
-* dissalow "kill" when allready dead
-* all hell knight actions
-* COM_LoadStackFile
-* cache movement
-* fixed shambler pain frame
+* fixed crash on machines with no sound card
+* made texmake grab new palette
+* removed tent generated soudns from progs
+* fixed enemy anger on damage
+* sound channel 0 never overrides another sound
+* basic blob
+* light styles in savegames
+* Cash's fix for savegame slowness
+* door messages
+* fixed door retriggering sound and mixed size letdowns
+* changed zombie pain / clipping code
+* enforcer backpacks and alt death frames
+* trigger monsters play awake sound
+* longer ogre aim time
+* fixed checkattacks crossing water
+* new bit coding on entity updates
 
-+ stair climbing clipping against walls is messed up a bit
-+ monsters need to drop to floor after teleport
-+ menu01
-+ loading on stack causes errors on dos
-+ flashing disk icon
-+ make caching perfect
-+ monsters not fight each other if not seen player yet
-+ make lighting gun consume cells
-+ falling into floor bug
-+ zombie clipping
-+ cycling channel allocation
-+ no Host_Error: for valid disconnect
-+ body que isn't working
++ lightstyles in savegames
++ broke multiple message triggers
++ key door sounds
++ messages on double doors
++ messages on secret doors
++ 3 digit frag bar
++ light edges
++ change weapon command
++ center print messages
++ hell knight slice
++ more wizard death frames
++ underwater noise
 
-shooting rockets at point blank
-deathmatch switch to better weapon again
-lightning needs to pitch
-control animating texture speed
-need to cut the update message size
-sfx volume option
-player only checkbox for doors and triggers
-launch lightning from exact spots
-finalize HMD interface
-repeating grenade bounce on some slopes
-jump out of water automatically when swim up to an edge, no need to jump
-new ground explosions
-auto pitch went into look down for no reason
-gib velocity reletive to damage?
+make gib entity rotation client side only
+ambient level on doors
+decouple weapon animations from pain, etc
+light bmodels
+point blank rockets
+look at killer monster
+swing weapons down
+turn view when axe fighting
+grenade destroy bodies
+lightning/rocket shooter
+swimming frames
+teleport warping
+teleporter surface warp
+blow up corpses
+get all visible enttites into low 128 or 256
