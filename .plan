@@ -1,16 +1,12 @@
-* fixed efrag allocation on restart (really)
-* fixed static sprite placement
-* fixed light casting from torches
-* fixed spawning angles
-* fixed savegame and multi player baseline object startup
-* made QuakeEd go to info_playerstart at level load
++ dynamic lights....
++ grenade activation size
++ entnum optimization
++ make progs use pointers for edicts?
++ sideways spikes
 
-+ fix damage trace through entities
-+ keyboard freelook
-
-spinning gibs on floor
-very high framerates mess up
-extra back attack damage
-buffered IO problem on romero's machine
-stereo still isn't right
-partical puffs
+esc = floating menus, with console option
+remove avelocity?
+track down the _SCR_UpdateScreen <cycle 2> [23] from profile
+clean up search path syntax
+fix style lighting on alias models
+more #ifdef PARANOID
