@@ -1,7 +1,8 @@
-* areaportals!!!
-* model contents for moving water
+* fullsend headnode done properly
 
-+ use different decompression buffers for pvs and phs?
-+ fix headnode issues
++ animating textures
++ must check all cluster areas for doors
 
-get rid of fat pvs completely?
+-1 cluster issues?
+more dramatic railgun spray
+check all the trace flags to see if they are still needed
